@@ -49,6 +49,8 @@
   <?php endif;?>
   <a href="#Testimonial" onclick="activeMenuFunction(this)">Testimonial</a>
   
+  <a href="http://infonet.tourcomcuba.com/" onclick="activeMenuFunction(this)">Infonet</a> 
+
   <a href="#ContactUs" onclick="activeMenuFunction(this)">Contact Us</a>
 </div>
 

@@ -39,6 +39,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
   <?php endif;?>
   <a href="http://sensesofcuba.com/#Testimonial" onclick="activeMenuFunction(this)">Testimonial</a>
   
+  <a href="http://infonet.tourcomcuba.com/" onclick="activeMenuFunction(this)">Infonet</a> 
+  
+  
   <a href="http://sensesofcuba.com/#ContactUs" onclick="activeMenuFunction(this)">Contact Us</a> 
 </div>
 <div id="logo_img" style=" position:fixed;left: 50%;transform: translate(-50%, 0px);z-index:3000" class="logoImg">
