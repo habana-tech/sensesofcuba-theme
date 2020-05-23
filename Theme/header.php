@@ -26,12 +26,11 @@
 
 <div class="menu-container">
 
-
-<div style="position: fixed;top:6px;z-index: 25000;right: 0;margin-right: 5%;cursor: pointer;" onclick="myFunction(this)">
-  <div class="bar1" style=" z-index: 25000"></div>
-  <div class="bar2" style="z-index: 25000"></div>
-  <div class="bar3" style="z-index: 25000"></div>
-</div>
+    <div style="position: fixed;top:6px;z-index: 25000;right: 0;margin-right: 5%;cursor: pointer;" onclick="myFunction(this)">
+      <div class="bar1" style=" z-index: 25000"></div>
+      <div class="bar2" style="z-index: 25000"></div>
+      <div class="bar3" style="z-index: 25000"></div>
+    </div>
 </div>
 
 <div id="mySidenav" style="z-index: 1500" class="container sidenav shadow" >
@@ -52,6 +51,15 @@
   <a href="http://infonet.tourcomcuba.com/" onclick="activeMenuFunction(this)">Infonet</a> 
 
   <a href="#ContactUs" onclick="activeMenuFunction(this)">Contact Us</a>
+
+    <div class="social-btn">
+        <a href="https://www.instagram.com/sensesofcuba/" title="Follow us on Instagram">
+             <i class="demo-icon socialicon-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/Senses-of-Cuba-112770987041244/" title="Follow us on Facebook">
+             <i class="demo-icon socialicon-facebook"></i>
+        </a>
+    </div>
 </div>
 
 
