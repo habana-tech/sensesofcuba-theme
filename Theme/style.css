@@ -322,11 +322,11 @@ li.comment{
 }
 
 body{
-       font-family: Montserrat-Regular;
+       font-family: Montserrat-Regular, Arial, sans-serif;
 }
 
 h1,h2,h3,h4,h5{
-    font-family: Montserrat-Bold !important;
+    font-family: Montserrat-Bold, "Arial Black", sans-serif !important;
 }
 
 .yellowTitle{
@@ -364,11 +364,11 @@ line-height: 25px;
 
 .profile-container span{
 font-size: 13px;
-font-family: Montserrat-Bold !important;
+font-family: Montserrat-Bold, "Arial Black", sans-serif !important;
 }
 
 .boldText{
-    font-family: Montserrat-Bold !important;
+    font-family: Montserrat-Bold, "Arial Black", sans-serif !important;
 }
 
 #img_logo{
@@ -376,7 +376,7 @@ font-family: Montserrat-Bold !important;
 }
 
 .regularText{
-       font-family: Montserrat-Regular !important;
+       font-family: Montserrat-Regular, Arial, sans-serif !important;
 }
 .elipse-down{
     background-image: url('assets/Images/Down.png');
@@ -700,7 +700,7 @@ div.wpcf7-response-output
     /*border: 5px double;    */
 }
 .testimonial{
-    font-family: Montserrat-Regular !important;
+    font-family: Montserrat-Regular, Arial, sans-serif !important;
 }
 .testimonial>p{
     font-size: 15px !important;
@@ -708,12 +708,12 @@ div.wpcf7-response-output
 }
 
 .meetUsComponent{
- font-family: Montserrat-Bold !important;   
+ font-family: Montserrat-Bold, "Arial Black", sans-serif !important;
 }
 
 
 .meetUsComponentTxt{
-    font-family: Montserrat-Regular !important;   
+    font-family: Montserrat-Regular, Arial, sans-serif  !important;
     color: grey !important;
 }
 
