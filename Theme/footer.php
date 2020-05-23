@@ -64,6 +64,24 @@ Aquí va el contenido del pie de página
 		</ul>
 		
 		</div>
+
+        <div class="mx-auto" style="width: 300px">
+            <p class="text-white" style="font-size: 14px;text-align: center;" class="regularText"></p>
+            <ul style="width: 300px;text-align: center;margin: auto;font-size: 13px" class="text-white">
+                <li class="text-grey" >FOLLOW US ON</li>
+                <li>
+                    <div class="footer social-btn">
+                        <a href="https://www.instagram.com/sensesofcuba/" title="Follow us on Instagram">
+                             <i class="demo-icon socialicon-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Senses-of-Cuba-112770987041244/" title="Follow us on Facebook">
+                             <i class="demo-icon socialicon-facebook"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+		</div>
 		</div>
 	</div>
 

@@ -1,5 +1,5 @@
 /*****/
-#mySidenav div.social-btn{
+#mySidenav div.social-btn, .footer.social-btn{
     display: flex;
     align-content: center;
     justify-content: left;
@@ -8,8 +8,20 @@
     padding: 8px 8px 10px 46px;
     gap: .8em;
 }
-#mySidenav div.social-btn a{
+.footer.social-btn {
     padding: 0;
+    justify-content: center;
+}
+#mySidenav div.social-btn a, .footer.social-btn a{
+    padding: 0;
+    color: #ffffff;
+}
+#mySidenav div.social-btn a:hover,
+#mySidenav div.social-btn a:active,
+.footer.social-btn a:hover,
+.footer.social-btn a:active
+{
+color: #FDC416 !important;
 }
 @font-face {
   font-family: 'fontello';
