@@ -491,7 +491,7 @@ font-family: Montserrat-Bold, "Arial Black", sans-serif !important;
 
 
 
-@media(min-width: 659){
+@media(min-width: 659px){
    .containerLeft{
     float: right;clear: both;
 } 
@@ -560,7 +560,7 @@ font-family: Montserrat-Bold, "Arial Black", sans-serif !important;
 @media(max-width: 768px)
 {
     .contentLeft{
-    width: 250px;text-align: center;font-size: ;margin: auto;
+    width: 250px;text-align: center ;margin: auto;
 }
 }
 @media(max-width: 560px)
@@ -777,7 +777,7 @@ div.wpcf7-response-output
 .has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}*/
 
 
-@media(min-width: 1500)
+@media(min-width: 1500px)
 {
    .carousel-caption h2{
     width: 199px !important;
