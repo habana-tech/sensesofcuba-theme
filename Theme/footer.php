@@ -30,7 +30,7 @@ Aquí va el contenido del pie de página
 				</div>
 				<div  class="pb-2">
 					<span class=" titleLeft d-block text-greyColor " >EMERGENCY PHONE</span>
-					<span class="text-light d-block contentLeft" style="font-size: 13px" >+53 5813 8572</span>
+					<span class="text-light d-block contentLeft" style="font-size: 13px" >+53 5339 3060</span>
 				</div>
 				
 			</div>
