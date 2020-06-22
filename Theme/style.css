@@ -799,6 +799,9 @@ section#News .news_text_column{
     flex-direction: column;
     justify-content: center;
 }
+section#News div.news-item{
+    margin-top: 1em;
+}
 section#News .news_text_column .translations_list{
     /*margin-top: 1em;*/
 }

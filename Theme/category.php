@@ -58,84 +58,112 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
  
 
 <body <?php body_class();?>>
-<?php if(get_posts('cat=11')):?>
-<section  id="News" style="padding-top:50px" >
-<div class="fluid-container pb-5 ">
-	<div style="text-align: center;margin-top:20px; ">
-		<h2 class="mx-auto text-black" style="line-height: 25px;" >ALL </h2>
-		<h2 class="mx-auto yellowTitle" style="line-height: 25px;">NEWS</h2>
-	</div>
-	<div class="row mx-auto  p-3">
-    <?php		
-	foreach (get_posts('cat=11') as $post) {?>
+    <section  id="News" style="padding-top:50px" >
 
-	<div class="col-lg-5 col-md-12 pt-2">
-	<section id="<?php echo "new_slider".$post->ID; ?>"  class="carousel slide carousel-fade" data-ride="carousel" >
-  <div class="carousel-inner">
-	<div class="carousel-item active">
-	<?php 
-	$image = get_field('image_1');
-	$image2 = get_field('image_2');
-	$image3 = get_field('image_3');
-	if( !empty($image) ): ?>
-	<div class="carousel-caption" style="text-shadow:2px 1px 1px #000000">
-	  <h5><?php echo $image['caption']; ?></h5>
-	</div>
-    	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-	<?php endif; ?>
-	</div>
 
-<?php if( !empty($image2) ): ?>
-<div class="carousel-item">
-	<div class="carousel-caption "  style="text-shadow:2px 1px 1px #000000" >
-		<h5><?php echo $image2['caption']; ?></h5>
-	</div>
-    <img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
-</div>
-<?php endif; ?>
-<?php if( !empty($image3)): ?>
-<div class="carousel-item ">
-	<div class="carousel-caption "  style="text-shadow:2px 1px 1px #000000" >
-	<h5><?php echo $image3['caption']; ?></h5>
-	</div>
-    	<img src="<?php echo $image3['url']; ?>" alt="<?php echo $image3['alt']; ?> " />
-	</div>
-<?php endif; ?>
+        <div class="fluid-container pb-5 ">
+            <div style="text-align: center;margin-top:20px; ">
+                <h2 class="mx-auto text-black" style="line-height: 25px;" >ALL </h2>
+                <h2 class="mx-auto yellowTitle" style="line-height: 25px;">NEWS</h2>
+            </div>
+            <div class="row mx-auto  p-3 ">
 
-</div>
-<?php if( !empty($image2) ||!empty($image3) ): ?>
-<a class="carousel-control-prev" href="<?php echo "#new_slider".$post->ID; ?>" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="<?php echo "#new_slider".$post->ID; ?>" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  <?php endif; ?>
-</section>
-	</div>
 
-	<div class="col-lg-7 col-md-12 pt-2">
-	<?php $dateformatstring = "d F, Y";
-    $unixtimestamp = strtotime(get_field('new_date'));
-    $datePublished=date_i18n($dateformatstring, $unixtimestamp);
-	$desc=custom_excerpt(get_post_field('post_content',$post->ID), 125);
-	 echo '<h2 style="font-size:20px" class="yellowTitle">'.get_the_title().'</h2>'
-	 .'<span style="font-size:10px;color:grey">Published: '.$datePublished.'</span>'.
-	  '<p class="card-text" >'.get_post_field('post_content',$post->ID).'</p>'?>
-    
-	</div>
-    
+                  <?php
 
-    	<?php } ?>
-		<hr/>
-	</div>
-    
-</div>
-</section>
-<?php endif;?>
+                  $query = new WP_Query( array( 'category_name' => 'news' ) );
+                  $posts = $query->get_posts();
 
+                  if(!empty($posts)):?>
+
+                      <?php foreach ($posts as $post) {
+                          $postContentParts = explode('<!--more-->', $post->post_content);
+
+                          if (count($postContentParts) > 1) {
+                              $postIntro = $postContentParts[0];
+                          } else {
+                              $postIntro = custom_excerpt($post->post_content, 150);
+                          }
+
+                          ?>
+
+                    <div class="row news-item">
+                          <div class="col-lg-5 col-md-12 pt-2">
+                              <section id="<?php echo "new_slider".$post->ID; ?>"  class="carousel slide carousel-fade" data-ride="carousel" >
+                                  <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                          <?php
+                                          $image = get_field('image_1');
+                                          $image2 = get_field('image_2');
+                                          $image3 = get_field('image_3');
+                                          if( !empty($image) ): ?>
+                                              <div class="carousel-caption" style="text-shadow:2px 1px 1px #000000">
+                                                  <h5><?php echo $image['caption']; ?></h5>
+                                              </div>
+                                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                          <?php endif; ?>
+                                      </div>
+
+                                      <?php if( !empty($image2) ): ?>
+                                          <div class="carousel-item">
+                                              <div class="carousel-caption "  style="text-shadow:2px 1px 1px #000000" >
+                                                  <h5><?php echo $image2['caption']; ?></h5>
+                                              </div>
+                                              <img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
+                                          </div>
+                                      <?php endif; ?>
+                                      <?php if( !empty($image3)): ?>
+                                          <div class="carousel-item ">
+                                              <div class="carousel-caption "  style="text-shadow:2px 1px 1px #000000" >
+                                                  <h5><?php echo $image3['caption']; ?></h5>
+                                              </div>
+                                              <img src="<?php echo $image3['url']; ?>" alt="<?php echo $image3['alt']; ?> " />
+                                          </div>
+                                      <?php endif; ?>
+
+                                  </div>
+                                  <?php if( !empty($image2) ||!empty($image3) ): ?>
+                                      <a class="carousel-control-prev" href="<?php echo "#new_slider".$post->ID; ?>" role="button" data-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                      </a>
+                                      <a class="carousel-control-next" href="<?php echo "#new_slider".$post->ID; ?>" role="button" data-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                      </a>
+                                  <?php endif; ?>
+                              </section>
+                          </div>
+
+                          <div class="col-lg-7 col-md-12 pt-2 news_text_column">
+                              <?php $dateformatstring = "d F, Y";
+                              $unixtimestamp = strtotime(get_field('new_date'));
+                              $datePublished=date_i18n($dateformatstring, $unixtimestamp);
+                              ?>
+
+                              <h2 style="font-size:20px" class="yellowTitle"> <?php echo $post->post_title; ?></h2>
+                              <span style="font-size:10px;color:grey">Published: <?php echo $datePublished; ?></span>
+
+                              <ul class="translations_list">
+                                  <?php pll_the_languages(['post_id' => $post->ID, 'hide_if_empty' => true, 'show_flags'=>true, 'hide_if_no_translation'=>true]); ?>
+                              </ul>
+
+
+                              <p class="card-text" ><?php echo $postIntro; ?></p>
+
+                          </div>
+                    </div>
+
+                      <?php }  ?>
+
+                  <?php endif;?>
+
+            </div>
+
+        </div>
+
+
+    </section>
 <!-- FOOTER -->
 
 <div>

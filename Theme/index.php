@@ -451,13 +451,12 @@ $new=new WP_Query(array(
             if (count($postContentParts) > 1) {
                 $postIntro = $postContentParts[0];
             } else {
-                $postIntro = substr(nl2br(strip_tags($postContent)), 0, 300);
+                $postIntro = $postIntro = custom_excerpt($postContent, 150);
             }
 
             $dateformatstring = "d F, Y";
             $unixtimestamp = strtotime(get_field('new_date'));
-            $datePublished=date_i18n($dateformatstring, $unixtimestamp);
-            $desc=custom_excerpt(get_post_field('post_content',$post->ID), 125);?>
+            $datePublished=date_i18n($dateformatstring, $unixtimestamp);?>
              <h2 class="yellowTitle" style="font-size:20px">
                  <?php echo get_the_title(); ?>
 <!--              <a href="--><?php //echo get_permalink(get_the_ID()); ?><!--">-->

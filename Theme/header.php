@@ -54,7 +54,7 @@
 
     <div class="social-btn">
         <a href="https://www.instagram.com/sensesofcuba/" title="Follow us on Instagram">
-             <i class="demo-icon socialicon-instagram">Instagram
+             <i class="demo-icon socialicon-instagram">
              </i>
         </a>
         <a href="https://www.facebook.com/Senses-of-Cuba-112770987041244/" title="Follow us on Facebook">

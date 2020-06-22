@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                                         <div class="col-sm-4">
                                         <figure class="figure ">
                                         <img class=" figure-img mw-100 img-thumbnail w-100 h-25"  src="<?php echo $attachments->url() ?>" >
-                                        <figcaption class="figure-caption"><?php echo $attachments->field( 'caption' ) ?></caption>
+                                            <figcaption class="figure-caption"><?php echo $attachments->field( 'caption' ) ?></figcaption>
                                     </figure>
                                     </div>
                                     <?php endwhile; ?>
