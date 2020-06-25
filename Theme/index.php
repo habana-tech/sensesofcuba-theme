@@ -473,6 +473,9 @@ $new=new WP_Query(array(
             </ul>
 
              <div class="card-text"><?php echo $postIntro; ?></div>
+			 <div class="read-more pt-1">
+			 	<a class="btn btn-warning btn-sm" role="button" href="<?php echo get_permalink(get_the_ID()); ?>">Read more</a>
+			 </div>
 
 
 
