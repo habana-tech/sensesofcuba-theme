@@ -122,7 +122,7 @@ if( !empty($image) ): ?>
 		</div>
 	<div class="row yellowBackground profile-text">
 		<div class="col-sm-6 col-md-6 col-lg-4">
-			<b style="text-transform: uppercase;">Senses of Cuba</b> is your European DMC with a main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups, incentive groups and more. Profit from more than 16 years of experience in Cuba, a complex but fascinating destination. With a mixed European and Cuban team of about 30 professionals, we create unique programs and experiences for travellers showing both, the “nostalgic” and the “New Cuba”.
+			<b style="text-transform: uppercase;">Senses of Cuba</b> is your European DMC with a main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups, <a href="#">incentive groups</a>, cruiseships and more. Profit from more than 16 years of experience in Cuba, a complex but fascinating destination. With a mixed European and Cuban team of about 30 professionals, we create unique programs and experiences for travellers showing both, the “nostalgic” and the “New Cuba”.
 		</div>
 		<div class="col-sm-6  col-md-6 col-lg-4">
 			Bernd Herrmann (general manager and owner) living in Havana since 2001, and his team have created and managed a growing number of incentive- and tailormade programs in Cuba with clients from world renowned international companies reaching from the auto, finance, construction and food sector to the IT, insurance and pharmaceutical industry.
@@ -207,8 +207,8 @@ if( !empty($image) ): ?>
 <section id="profile-container" class="pb-3 yellowBackground" >
 	<div class="container profile-container pb-0" style="margin-top: -1px" >
     	<div id="productText" style="" >
-			<h2 class="mx-auto text-black">OUR</h2>
-			<h2 class="mx-auto text-white">PRODUCTS</h2>
+			<h2 class="mx-auto text-black">PRODUCTS</h2>
+			<h2 class="mx-auto text-white">LEISURE & MICE</h2>
 		</div>
 	</div>
 </section>

@@ -10,47 +10,13 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
 <head>
 <meta charset="<?php bloginfo( 'charset' );?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
- 
+
+<?php echo getGoogleTagManagerHeader(); ?>
 <?php    
   $newsQuery=new WP_Query(array('category_name'  => 'News'));
   $eventsQuery=new WP_Query(array('category_name'  => 'Events'));
 ?>
-<!-- MENU -->
-<div class="menu-container menu-bar">
-<div style="position: fixed;top:6px;z-index: 25000;right: 0;margin-right: 5%;cursor: pointer;" onclick="myFunction(this)">
-  <div class="bar1" style=" z-index: 25000"></div>
-  <div class="bar2" style="z-index: 25000"></div>
-  <div class="bar3" style="z-index: 25000"></div>
-</div>
-</div>
 
-<div id="mySidenav" style="z-index: 1500" class="container sidenav shadow" >
-  <a href="http://sensesofcuba.com" class="menuActive" >Home</a>
-  <a href="http://sensesofcuba.com/#Profile" >About Us</a>
-  <a href="http://sensesofcuba.com/#ourTeam" >Our Team</a>
-  <a href="http://sensesofcuba.com/#ProductSection" >Products</a>
-  <a href="http://sensesofcuba.com/#MeetUs" >Meet Us</a>
-  <a href="http://sensesofcuba.com/#Jobs" >Jobs</a>
-  <?php if($eventsQuery->have_posts()):?>  
-  <a href="http://sensesofcuba.com/#Events" onclick="activeMenuFunction(this)">Events</a>
-  <?php endif;?>
-  <?php if($newsQuery->have_posts()):?>  
-  <a href="http://sensesofcuba.com/#News" onclick="activeMenuFunction(this)">News</a>
-  <?php endif;?>
-  <a href="http://sensesofcuba.com/#Testimonial" onclick="activeMenuFunction(this)">Testimonial</a>
-  
-<!--  <a href="http://infonet.tourcomcuba.com/" onclick="activeMenuFunction(this)">Infonet</a> -->
-  
-  
-  <a href="http://sensesofcuba.com/#ContactUs" onclick="activeMenuFunction(this)">Contact Us</a> 
-</div>
-<div id="logo_img" style=" position:fixed;left: 50%;transform: translate(-50%, 0px);z-index:3000" class="logoImg">
-  			<img id="img_logo"  class="mx-auto" src="
-<?php  echo get_template_directory_uri() . '/assets/images/soc.png'?>
-  			" alt="SenseOfCubaLogo">
-  			
-		</div>
-<!-- END MENU -->
 
  
 <?php wp_head();?>
@@ -58,6 +24,46 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
  
 
 <body <?php body_class();?>>
+    <?php echo getGoogleTagManagerBody(); ?>
+
+    <!-- MENU -->
+    <div class="menu-container menu-bar">
+        <div style="position: fixed;top:6px;z-index: 25000;right: 0;margin-right: 5%;cursor: pointer;" onclick="myFunction(this)">
+            <div class="bar1" style=" z-index: 25000"></div>
+            <div class="bar2" style="z-index: 25000"></div>
+            <div class="bar3" style="z-index: 25000"></div>
+        </div>
+    </div>
+
+    <div id="mySidenav" style="z-index: 1500" class="container sidenav shadow" >
+        <a href="http://sensesofcuba.com" class="menuActive" >Home</a>
+        <a href="http://sensesofcuba.com/#Profile" >About Us</a>
+        <a href="http://sensesofcuba.com/#ourTeam" >Our Team</a>
+        <a href="http://sensesofcuba.com/#ProductSection" >Products</a>
+        <a href="http://sensesofcuba.com/#MeetUs" >Meet Us</a>
+        <a href="http://sensesofcuba.com/#Jobs" >Jobs</a>
+        <?php if($eventsQuery->have_posts()):?>
+            <a href="http://sensesofcuba.com/#Events" onclick="activeMenuFunction(this)">Events</a>
+        <?php endif;?>
+        <?php if($newsQuery->have_posts()):?>
+            <a href="http://sensesofcuba.com/#News" onclick="activeMenuFunction(this)">News</a>
+        <?php endif;?>
+        <a href="http://sensesofcuba.com/#Testimonial" onclick="activeMenuFunction(this)">Testimonial</a>
+
+        <!--  <a href="http://infonet.tourcomcuba.com/" onclick="activeMenuFunction(this)">Infonet</a> -->
+
+
+        <a href="http://sensesofcuba.com/#ContactUs" onclick="activeMenuFunction(this)">Contact Us</a>
+    </div>
+    <div id="logo_img" style=" position:fixed;left: 50%;transform: translate(-50%, 0px);z-index:3000" class="logoImg">
+        <img id="img_logo"  class="mx-auto" src="
+<?php  echo get_template_directory_uri() . '/assets/images/soc.png'?>
+  			" alt="SenseOfCubaLogo">
+
+    </div>
+    <!-- END MENU -->
+
+
     <section  id="News" style="padding-top:50px" >
 
 
