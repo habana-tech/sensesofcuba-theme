@@ -41,7 +41,7 @@
   <a href="#Profile" onclick="activeMenuFunction(this);">About Us</a>
   <a href="#ourTeam" onclick="activeMenuFunction(this);">Our Team</a>
   <a href="#ProductSection" onclick="activeMenuFunction(this);">Products Leisure</a>
-  <a href="#" onclick="activeMenuFunction(this);">Products MICE</a>
+  <a href="https://sensesofcuba.com/wp-content/uploads/2020/10/SOC-Incentive-and-MICE-Overview.pdf" target="_blank" onclick="activeMenuFunction(this);">Products MICE</a>
   <a href="#MeetUs" onclick="activeMenuFunction(this)">Meet Us</a>
   <a href="#Jobs" onclick="activeMenuFunction(this)">Jobs</a>
   <?php if($eventsQuery->have_posts()):?>  

@@ -20,7 +20,7 @@ Aquí va el contenido del pie de página
 			<div  class="col-md-6" id="first-item">
 				<div style="" class="pb-2 ">
 					<span class="titleLeft text-greyColor d-block " >ADDRESS</span>
-					<span class="text-light d-block contentLeft" style="font-size: 13px">Edificio Bacardí, Oficina 404, Calle Monserrate 261  <span>
+					<span class="text-light d-block contentLeft" style="font-size: 13px">Edificio Bacardí, Oficina 404, Calle Monserrate 261  </span>
 					<span class="text-light d-block contentLeft" style="font-size: 13px">10100, La Habana Vieja, Havana, Cuba.</span>
 
 				</div>
