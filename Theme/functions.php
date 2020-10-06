@@ -212,3 +212,29 @@ function getGoogleTagManagerBody()
 
 }
 
+
+function getIncentivesFileURL()
+{
+    $incentiveQuery = new WP_Query( array( 'pagename' => 'soc-incentive-and-mice-overview' ) );
+    if($incentiveQuery->is_page())
+    {
+        $pageID = $incentiveQuery->get_queried_object()->ID;
+        $incentiveFile = new Attachments('attachments', $pageID);
+        $incentiveFileUrl = null;
+        if($incentiveFile->exist())
+        {
+
+            while( $attachment = $incentiveFile->get() )
+            {
+                if($incentiveFile->url() != null)
+                {
+                    $incentiveFileUrl = $incentiveFile->url();
+                    return $incentiveFileUrl;
+                }
+                break;
+            }
+        }
+
+    }
+    return false;
+}

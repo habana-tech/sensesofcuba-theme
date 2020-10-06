@@ -124,7 +124,14 @@ if (!empty($image)): ?>
                     </div>
                     <div class="row yellowBackground profile-text">
                         <div class="col-sm-6 col-md-6 col-lg-4">
-                            <b style="text-transform: uppercase;">Senses of Cuba</b> is your European DMC with a main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups, <a target="_blank" href="https://sensesofcuba.com/wp-content/uploads/2020/10/SOC-Incentive-and-MICE-Overview.pdf" style="color: black; font-weight: 600; text-underline: black; text-decoration: underline">incentive groups</a>, cruiseships and more. Profit from more than 16 years of experience in Cuba, a complex but fascinating destination. With a mixed European and Cuban team of about 30 professionals, we create unique programs and experiences for travellers showing both, the “nostalgic” and the “New Cuba”.
+                            <b style="text-transform: uppercase;">Senses of Cuba</b> is your European DMC with a main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups,
+                            <a target="_blank" href="<?php
+    if($fileURL = getIncentivesFileURL())
+    {
+        echo $fileURL;
+    }
+    else echo '#';
+                            ?>" style="color: black; font-weight: 600; text-underline: black; text-decoration: underline">incentive groups</a>, cruiseships and more. Profit from more than 16 years of experience in Cuba, a complex but fascinating destination. With a mixed European and Cuban team of about 30 professionals, we create unique programs and experiences for travellers showing both, the “nostalgic” and the “New Cuba”.
                         </div>
                         <div class="col-sm-6  col-md-6 col-lg-4">
                             Bernd Herrmann (general manager and owner) living in Havana since 2001, and his team have created and managed a growing number of incentive- and tailormade programs in Cuba with clients from world renowned international companies reaching from the auto, finance, construction and food sector to the IT, insurance and pharmaceutical industry.

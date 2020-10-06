@@ -43,29 +43,11 @@
   <a href="#ProductSection" onclick="activeMenuFunction(this);">Products Leisure</a>
 
     <?php
-    $incentiveQuery = new WP_Query( array( 'pagename' => 'soc-incentive-and-mice-overview' ) );
-    if($incentiveQuery->is_page())
+    if($fileURL = getIncentivesFileURL())
     {
-        $pageID = $incentiveQuery->get_queried_object()->ID;
-        $incentiveFile = new Attachments('attachments', $pageID);
-        $incentiveFileUrl = null;
-//        var_dump($incentiveFile);
-        if($incentiveFile->exist())
-        {
-            while( $attachment = $incentiveFile->get() )
-            {
-                if($incentiveFile->url() != null)
-                {
-                    $incentiveFileUrl = $incentiveFile->url();
-                    ?>
-                    <a href="<?php echo $incentiveFileUrl; ?>" target="_blank" onclick="activeMenuFunction(this);">Products MICE</a>
-
-                    <?php
-                }
-                break;
-            }
-        }
-
+        ?>
+        <a href="<?php echo $fileURL; ?>" target="_blank" onclick="activeMenuFunction(this);">Products MICE</a>
+    <?php
     }
     ?>
   <a href="#MeetUs" onclick="activeMenuFunction(this)">Meet Us</a>
