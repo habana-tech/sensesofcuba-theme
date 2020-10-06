@@ -41,7 +41,33 @@
   <a href="#Profile" onclick="activeMenuFunction(this);">About Us</a>
   <a href="#ourTeam" onclick="activeMenuFunction(this);">Our Team</a>
   <a href="#ProductSection" onclick="activeMenuFunction(this);">Products Leisure</a>
-  <a href="https://sensesofcuba.com/wp-content/uploads/2020/10/SOC-Incentive-and-MICE-Overview.pdf" target="_blank" onclick="activeMenuFunction(this);">Products MICE</a>
+
+    <?php
+    $incentiveQuery = new WP_Query( array( 'pagename' => 'soc-incentive-and-mice-overview' ) );
+    if($incentiveQuery->is_page())
+    {
+        $pageID = $incentiveQuery->get_queried_object()->ID;
+        $incentiveFile = new Attachments('attachments', $pageID);
+        $incentiveFileUrl = null;
+//        var_dump($incentiveFile);
+        if($incentiveFile->exist())
+        {
+            while( $attachment = $incentiveFile->get() )
+            {
+                if($incentiveFile->url() != null)
+                {
+                    $incentiveFileUrl = $incentiveFile->url();
+                    ?>
+                    <a href="<?php echo $incentiveFileUrl; ?>" target="_blank" onclick="activeMenuFunction(this);">Products MICE</a>
+
+                    <?php
+                }
+                break;
+            }
+        }
+
+    }
+    ?>
   <a href="#MeetUs" onclick="activeMenuFunction(this)">Meet Us</a>
   <a href="#Jobs" onclick="activeMenuFunction(this)">Jobs</a>
   <?php if($eventsQuery->have_posts()):?>  

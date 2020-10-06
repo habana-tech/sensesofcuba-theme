@@ -36,6 +36,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                                         <img class=" figure-img mw-100 img-thumbnail w-100 h-25"  src="<?php echo $attachments->url() ?>" >
                                             <figcaption class="figure-caption"><?php echo $attachments->field( 'caption' ) ?></figcaption>
                                     </figure>
+                                            <div class="col-md-12">
+                                                <a href="<?php echo $attachments->url() ?>" class="btn btn-primary">Click to see the file.</a>
+                                            </div>
                                     </div>
                                     <?php endwhile; ?>
                                   </div>
