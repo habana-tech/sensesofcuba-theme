@@ -263,8 +263,32 @@ if (!empty($image)): ?>
     foreach ($orderedPostList as $postItem) {
         ?>
         <div class="col-md-4 BorderLWhite">
-            <img src="<?php echo get_field('product_photo', $postItem->ID)['url']; ?>" style="width: 100%">
-            <span class="product-text boldText"><?php echo $postItem->__get('product_description'); ?></span>
+
+            <?php
+
+            if($postItem->__get('product_description') === 'INCENTIVES & EVENTS' && $fileURL = getIncentivesFileURL())
+            {
+            ?>
+                <a href="<?php echo $fileURL?>">
+
+            <?php
+            }
+            ?>
+                <img src="<?php echo get_field('product_photo', $postItem->ID)['url']; ?>" style="width: 100%">
+                <span class="product-text boldText"><?php  echo $postItem->__get('product_description'); ?></span>
+
+
+
+            <?php
+            if($postItem->__get('product_description') === 'INCENTIVES & EVENTS' && getIncentivesFileURL())
+            {
+            ?>
+                </a>
+            <?php
+
+            }
+                ?>
+
         </div>
     <?php
     }
