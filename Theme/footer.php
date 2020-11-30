@@ -58,7 +58,7 @@ Aquí va el contenido del pie de página
 		<p class="text-white" style="font-size: 14px;text-align: center;" class="regularText"></p>
 		<ul style="width: 300px;text-align: center;margin: auto;font-size: 13px" class="text-white">
 			<li class="text-grey" >OPENING TIMES</li>
-			<li>Monday-Sunday: 09:00-17:00</li>
+			<li>Monday-Friday: 09:00-17:00</li>
 			<li>Saturday-Sunday (and public holidays): </li>
 			<li> 10:00-16:00</li>
 		</ul>
