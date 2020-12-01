@@ -69,30 +69,30 @@ echo  $currentLang->name. " " .$currentLang->flag. " ";
     </div>
 
   <a href="#" class="menuActive" onclick="activeMenuFunction(this);">Home</a>
-  <a href="#Profile" onclick="activeMenuFunction(this);">About Us</a>
-  <a href="#ourTeam" onclick="activeMenuFunction(this);">Our Team</a>
-  <a href="#ProductSection" onclick="activeMenuFunction(this);">Products Leisure</a>
+  <a href="#Profile" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navAboutUs'); ?></a>
+  <a href="#ourTeam" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navOurTeam'); ?></a>
+  <a href="#ProductSection" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navProductsLeisure'); ?></a>
 
     <?php
     if($fileURL = getIncentivesFileURL())
     {
         ?>
-        <a href="<?php echo $fileURL; ?>" target="_blank" onclick="activeMenuFunction(this);">Products MICE</a>
+        <a href="<?php echo $fileURL; ?>" target="_blank" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navProductsMICE'); ?></a>
     <?php
     }
     ?>
-  <a href="#MeetUs" onclick="activeMenuFunction(this)">Meet Us</a>
-  <a href="#Jobs" onclick="activeMenuFunction(this)">Jobs</a>
+  <a href="#MeetUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navProductsMICE'); ?></a>
+  <a href="#Jobs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navJobs'); ?></a>
   <?php if($eventsQuery->have_posts()):?>  
-  <a href="#Events" onclick="activeMenuFunction(this)">Events</a>
+  <a href="#Events" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navEvents'); ?></a>
   <?php endif;?>
   <?php if($newsQuery->have_posts()):?>  
-  <a href="#News" onclick="activeMenuFunction(this)">News</a>
+  <a href="#News" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navNews'); ?></a>
   <?php endif;?>
-  <a href="#Testimonial" onclick="activeMenuFunction(this)">Testimonial</a>
+  <a href="#Testimonial" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navTestimonial'); ?></a>
   
   <a href="http://infonet.tourcomcuba.com/" onclick="activeMenuFunction(this)">Infonet</a>
-  <a href="#ContactUs" onclick="activeMenuFunction(this)">Contact Us</a>
+  <a href="#ContactUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navContactUs'); ?></a>
 
     <div class="social-btn">
         <a href="https://www.instagram.com/sensesofcuba/" title="Follow us on Instagram">

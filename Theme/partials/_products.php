@@ -29,7 +29,6 @@
 
     $productsArray = [];
     if ($prods->have_posts()) {
-
         $currentLang = pll_current_language();
         $defaultLang = pll_default_language();
         $shouldTranslate = ($currentLang != $defaultLang);
@@ -60,23 +59,20 @@
         $incentivesCategoryStr = 'INCENTIVES & EVENTS';
         $incentivesFileURL = getIncentivesFileURL();
         foreach ($orderedPostList as $postItem) {
-
             $originalPostId = $postItem->ID;
             $translation = null;
-            if ($shouldTranslate)  //get the translation if exist
-            {
+            if ($shouldTranslate) {  //get the translation if exist
                 $translations = pll_get_post_translations($originalPostId);
-                if(isset($translations[$currentLang]))
-                {
+                if (isset($translations[$currentLang])) {
                     $translation = get_post($translations[$currentLang]);
-                    if($translation->post_status != 'publish')
+                    if ($translation->post_status != 'publish') {
                         $translation = null;
+                    }
                 }
             }
             $currentPost = ($shouldTranslate && $translation != null) ? $translation : $postItem;
             $isTheOriginalPost = ($currentPost->ID == $originalPostId);
-            $postDescription = $isTheOriginalPost ? $currentPost->__get('product_description') : $currentPost->post_title;
-            ?>
+            $postDescription = $isTheOriginalPost ? $currentPost->__get('product_description') : $currentPost->post_title; ?>
             <div class="col-md-4 BorderLWhite">
 
                 <?php

@@ -251,15 +251,15 @@ function getTranslatedStringFromDict($string)
         ],
         'navOurTeam' => [
             'en' => 'Our Team',
-            'de' => 'Our Team'
+            'de' => 'Unser Team'
         ],
         'navProductsLeisure' => [
             'en' => 'Products Leisure',
-            'de' => 'Products Leisure'
+            'de' => 'Produkte Leisure'
         ],
         'navProductsMICE' => [
             'en' => 'Products MICE',
-            'de' => 'Products MICE'
+            'de' => 'Produkte MICE'
         ],
         'navMeetUs' => [
             'en' => 'Meet Us',
@@ -269,9 +269,17 @@ function getTranslatedStringFromDict($string)
             'en' => 'Jobs',
             'de' => 'Jobs'
         ],
+        'navNews' => [
+            'en' => 'News',
+            'de' => 'News'
+        ],
+        'navEvents' => [
+            'en' => 'Events',
+            'de' => 'Events'
+        ],
         'navTestimonial' => [
             'en' => 'Testimonial',
-            'de' => 'Testimonial'
+            'de' => 'Kundenbewertungen'
         ],
         'navInfonet' => [
             'en' => 'Infonet',
@@ -392,23 +400,35 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'footerOpeningTimes' => [
             'en' => 'OPENING TIMES',
-            'de' => 'ÖFFNUNGSZEITEN'
+            'de' => 'BÜRO-ÖFFNUNGSZEITEN'
+        ],
+        'footerOpeningTimesValue' => [
+            'en' => 'Monday-Friday: 09:00-17:00',
+            'de' => 'Montag – Freitag: 9:00 – 17:00 Uhr'
+        ],
+        'footerOpeningTimesValue2' => [
+            'en' => 'Saturday-Sunday (and public holidays):',
+            'de' => 'Samstag – Sonntag (und an öffentlichen Feiertagen):'
+        ],
+        'footerOpeningTimesValue3' => [
+            'en' => '10:00-16:00',
+            'de' => '10:00 – 16:00 Uhr'
         ],
         'footerFOLLOW_US_ON' => [
             'en' => 'FOLLOW US ON',
-            'de' => 'FOLLOW US ON'
+            'de' => 'FOLGEN SIE UNS AUF'
         ],
         'footerAll_rights_reserved' => [
             'en' => 'All rights reserved',
-            'de' => 'All rights reserved'
+            'de' => 'Alle Rechte vorbehalten'
         ],
         'footerImprint' => [
             'en' => 'Imprint',
-            'de' => 'Impressum'
+            'de' => 'Druck'
         ],
         'footerPrivacyPolicy' => [
             'en' => 'Privacy Policy',
-            'de' => 'Datenschutzbestimmungen'
+            'de' => 'Datenschutzbestimmungen '
         ],
         'footerGeneralTermsAndConditions' => [
             'en' => 'General Terms and Conditions',
@@ -416,7 +436,7 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'footerCooperations' => [
             'en' => 'Cooperations',
-            'de' => 'Cooperations'
+            'de' => 'Kooperationen'
         ],
         //JOBS
         'jobsTitle' => [
@@ -425,12 +445,12 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'jobsView' => [
             'en' => 'VIEW',
-            'de' => 'Öffnen'
+            'de' => 'ÖFFNEN'
         ],
         //section NEWS
         'newsTitleL1' => [
             'en' => 'LATEST',
-            'de' => 'Neuigkeiten'
+            'de' => 'NEUIGKEITEN'
         ],
         'newsTitleL2' => [
             'en' => 'NEWS',
@@ -439,16 +459,16 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         //Testimonial section
         'testimonialTitle' => [
             'en' => 'TESTIMONIAL',
-            'de' => 'Kundenbewertungen'
+            'de' => 'KUNDENBEWERTUNGEN'
         ],
         //Products section
         'productsTitleL1' => [
             'en' => 'PRODUCTS',
-            'de' => 'Produkte'
+            'de' => 'PRODUKTE'
         ],
         'productsTitleL2' => [
             'en' => 'LEISURE & MICE',
-            'de' => 'Leisure und MICE'
+            'de' => 'LEISURE UND MICE'
         ],
     ];
 
