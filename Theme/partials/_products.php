@@ -29,10 +29,6 @@
 
     $productsArray = [];
     if ($prods->have_posts()) {
-        $currentLang = pll_current_language();
-        $defaultLang = pll_default_language();
-        $shouldTranslate = ($currentLang != $defaultLang);
-
         while ($prods->have_posts()) {
             //configure the current post as $post variable
             $prods->the_post();
@@ -60,17 +56,7 @@
         $incentivesFileURL = getIncentivesFileURL();
         foreach ($orderedPostList as $postItem) {
             $originalPostId = $postItem->ID;
-            $translation = null;
-            if ($shouldTranslate) {  //get the translation if exist
-                $translations = pll_get_post_translations($originalPostId);
-                if (isset($translations[$currentLang])) {
-                    $translation = get_post($translations[$currentLang]);
-                    if ($translation->post_status != 'publish') {
-                        $translation = null;
-                    }
-                }
-            }
-            $currentPost = ($shouldTranslate && $translation != null) ? $translation : $postItem;
+            $currentPost = getPostOrTranslationIfNeededAndExist($postItem);
             $isTheOriginalPost = ($currentPost->ID == $originalPostId);
             $postDescription = $isTheOriginalPost ? $currentPost->__get('product_description') : $currentPost->post_title; ?>
             <div class="col-md-4 BorderLWhite">
@@ -79,7 +65,7 @@
 
                 $productPhoto = get_field('product_photo', $postItem->ID);
                 $productPhotoUrl = isset($productPhoto['url']) ? $productPhoto['url'] : "#";
-                $productDescription = strtoupper(htmlentities($postDescription));
+                $productDescription = strtoupper($postDescription);
 
                 $itemMarkup = "<img src='$productPhotoUrl' style='width: 100%' alt='$productDescription'>
                             <span class='product-text boldText'>$productDescription</span>";

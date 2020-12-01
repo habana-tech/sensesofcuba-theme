@@ -267,7 +267,7 @@ function getTranslatedStringFromDict($string)
         ],
         'navJobs' => [
             'en' => 'Jobs',
-            'de' => 'Jobs'
+            'de' => 'Job-Angebote'
         ],
         'navNews' => [
             'en' => 'News',
@@ -470,10 +470,23 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
             'en' => 'LEISURE & MICE',
             'de' => 'LEISURE UND MICE'
         ],
+        //news section
+
+        'newsReadMore' => [
+            'en' => 'Read more',
+            'de' => 'Weiterlesen'
+        ],
+        'newsAllNews' => [
+            'en' => 'All News',
+            'de' => 'Alle Nachrichten'
+        ],
     ];
 
     if (isset($dict[$string][pll_current_language()])) {
         return $dict[$string][pll_current_language()];
+    }
+    if (isset($dict[$string][pll_default_language()])) {
+        return $dict[$string][pll_default_language()];
     }
     return '';
 }
@@ -481,4 +494,28 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
 function echoTranslatedString($string)
 {
     echo getTranslatedStringFromDict($string);
+}
+
+function isNeededTranslation(): bool
+{
+    $currentLang = pll_current_language();
+    $defaultLang = pll_default_language();
+    return ($currentLang != $defaultLang);
+}
+
+function getPostOrTranslationIfNeededAndExist($postObject)
+{
+    $originalPostId = $postObject->ID;
+    $translation = null;
+    if (isNeededTranslation()) {  //get the translation if exist
+        $translations = pll_get_post_translations($originalPostId);
+        if (isset($translations[pll_current_language()])) {
+            $translation = get_post($translations[pll_current_language()]);
+            if ($translation->post_status != 'publish') {
+                $translation = null;
+            }
+        }
+    }
+
+    return ( isNeededTranslation() && $translation != null) ? $translation : $postObject;
 }

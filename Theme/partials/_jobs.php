@@ -30,19 +30,7 @@ $mp=new WP_Query(array(
                         $file = get_field('file');
 
                         $originalPostId = get_the_ID();
-                        $translation = null;
-                        if ($shouldTranslate)  //get the translation if exist
-                        {
-                            $translations = pll_get_post_translations($originalPostId);
-                            if(isset($translations[$currentLang]))
-                            {
-                                $translation = get_post($translations[$currentLang]);
-                                if($translation->post_status != 'publish')
-                                    $translation = null;
-                            }
-                        }
-
-                        $currentPost = ($shouldTranslate && $translation != null) ? $translation : $post;
+                        $currentPost = getPostOrTranslationIfNeededAndExist($post);
                         $isTheOriginalPost = ($currentPost->ID == $originalPostId);
 
                         $postName = $isTheOriginalPost ? $currentPost->__get('name') : $currentPost->post_title;

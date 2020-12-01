@@ -1,9 +1,9 @@
 <?php
-$new=new WP_Query(array(
+$news=new WP_Query(array(
     'category_name'  => 'News',
     'posts_per_page' => 3,
     'lang' => 'en'));
-if ($new->have_posts()):?>
+if ($news->have_posts()):?>
     <section  id="News" class="pt-5" >
         <div class="fluid-container ">
             <div style="text-align: center;margin-bottom:29px; ">
@@ -12,7 +12,16 @@ if ($new->have_posts()):?>
             </div>
 
             <?php
-            while ($new->have_posts()) : $new->the_post();?>
+            while ($news->have_posts()) : $news->the_post();
+
+                $originalPostId = $post->ID;
+                $currentPost = getPostOrTranslationIfNeededAndExist($post);
+
+                $isTheOriginalPost = ($currentPost->ID == $originalPostId);
+                $postTitle = $currentPost->post_title;
+                $postDescription = $currentPost->post_content;
+                ?>
+
                 <div class="row mx-auto">
 
 
@@ -67,7 +76,8 @@ if ($new->have_posts()):?>
                         <?php
 
 
-                        $postContent = get_post_field('post_content', $post->ID);
+//                        $postContent = get_post_field('post_content', $post->ID);
+                        $postContent = $postDescription;
 
                         $postContentParts = explode('<!--more-->', $postContent);
 
@@ -81,7 +91,7 @@ if ($new->have_posts()):?>
                         $unixtimestamp = strtotime(get_field('new_date'));
                         $datePublished=date_i18n($dateformatstring, $unixtimestamp);?>
                         <h2 class="yellowTitle" style="font-size:20px">
-                            <?php echo get_the_title(); ?>
+                            <?php echo $postTitle; ?>
                             <!--              <a href="--><?php //echo get_permalink(get_the_ID());?><!--">-->
                             <!--                  -->
                             <!--              </a>-->
@@ -97,7 +107,7 @@ if ($new->have_posts()):?>
 
                         <div class="card-text"><?php echo $postIntro; ?></div>
                         <div class="read-more pt-1">
-                            <a class="btn btn-warning btn-sm" role="button" href="<?php echo get_permalink(get_the_ID()); ?>">Read more</a>
+                            <a class="btn btn-warning btn-sm" role="button" href="<?php echo get_permalink(get_the_ID()); ?>"><?php echoTranslatedString('newsReadMore'); ?></a>
                         </div>
 
 
@@ -107,7 +117,7 @@ if ($new->have_posts()):?>
             <?php endwhile;?>
             <div class="row mx-auto">
                 <div class="pt-1 w-100" style="float:right">
-                    <a href=" <?php echo get_category_link('11');?> "><button class="btn btn-warning boldText" style="float:right;margin-right:25px" data-toggle="tooltip" title="View All News">All News</button></a>
+                    <a href=" <?php echo get_category_link('11');?> "><button class="btn btn-warning boldText" style="float:right;margin-right:25px" data-toggle="tooltip" title="View All News"><?php echoTranslatedString('newsAllNews'); ?></button></a>
                 </div>
             </div>
 
