@@ -81,7 +81,7 @@ echo  $currentLang->name. " " .$currentLang->flag. " ";
     <?php
     }
     ?>
-  <a href="#MeetUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navProductsMICE'); ?></a>
+  <a href="#MeetUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navMeetUs'); ?></a>
   <a href="#Jobs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navJobs'); ?></a>
   <?php if($eventsQuery->have_posts()):?>  
   <a href="#Events" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navEvents'); ?></a>

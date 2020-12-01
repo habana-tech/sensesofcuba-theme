@@ -1,9 +1,9 @@
 <?php
-$new=new WP_Query(array(
+$news=new WP_Query(array(
     'category_name'  => 'News',
     'posts_per_page' => 3,
     'lang' => 'en'));
-if ($new->have_posts()):?>
+if ($news->have_posts()):?>
     <section  id="News" class="pt-5" >
         <div class="fluid-container ">
             <div style="text-align: center;margin-bottom:29px; ">
@@ -12,7 +12,16 @@ if ($new->have_posts()):?>
             </div>
 
             <?php
-            while ($new->have_posts()) : $new->the_post();?>
+            while ($news->have_posts()) : $news->the_post();
+
+                $originalPostId = $post->ID;
+                $currentPost = getPostOrTranslationIfNeededAndExist($post);
+
+                $isTheOriginalPost = ($currentPost->ID == $originalPostId);
+                $postTitle = $currentPost->post_title;
+                $postDescription = $currentPost->post_content;
+                ?>
+
                 <div class="row mx-auto">
 
 
@@ -67,7 +76,8 @@ if ($new->have_posts()):?>
                         <?php
 
 
-                        $postContent = get_post_field('post_content', $post->ID);
+//                        $postContent = get_post_field('post_content', $post->ID);
+                        $postContent = $postDescription;
 
                         $postContentParts = explode('<!--more-->', $postContent);
 
@@ -81,7 +91,7 @@ if ($new->have_posts()):?>
                         $unixtimestamp = strtotime(get_field('new_date'));
                         $datePublished=date_i18n($dateformatstring, $unixtimestamp);?>
                         <h2 class="yellowTitle" style="font-size:20px">
-                            <?php echo get_the_title(); ?>
+                            <?php echo $postTitle; ?>
                             <!--              <a href="--><?php //echo get_permalink(get_the_ID());?><!--">-->
                             <!--                  -->
                             <!--              </a>-->
