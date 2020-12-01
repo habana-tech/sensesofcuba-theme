@@ -28,15 +28,46 @@
 
 
 <div class="menu-container">
+    <div style="position: fixed;top:6px;z-index: 25000;right: 0;margin-right: 5%; display: flex ">
 
-    <div style="position: fixed;top:6px;z-index: 25000;right: 0;margin-right: 5%;cursor: pointer;" onclick="myFunction(this)">
-      <div class="bar1" style=" z-index: 25000"></div>
-      <div class="bar2" style="z-index: 25000"></div>
-      <div class="bar3" style="z-index: 25000"></div>
+
+        <div style="cursor: pointer;" onclick="myFunction(this)">
+            <div class="bar1" style=" z-index: 25000"></div>
+            <div class="bar2" style="z-index: 25000"></div>
+            <div class="bar3" style="z-index: 25000"></div>
+        </div>
     </div>
+
+
 </div>
 
+
+
 <div id="mySidenav" style="z-index: 1500" class="container sidenav shadow" >
+
+    <div aria-haspopup="true" class="dropdown text-primary" style=" color: #fdc416 !important;">
+        <a data-toggle="dropdown" class="dropdown-toggle nav-link">
+            <i class="flag-icon flag-icon-en"></i>
+            <span class="no-icon">   <?php
+
+//                echo (new PLL_Language(pll_current_language()))->flag;
+$currentLang = pll_current_language('OBJECT');
+echo  $currentLang->name. " " .$currentLang->flag. " ";
+
+//                var_dump();
+                ?>
+            </span></a>
+        <!---->
+        <ul class="dropdown-menu" style="background: rgba(0,0,0,.9);">
+
+            <!--            <li data-v-551e5a="" class="dropdown-item"><span data-v-551e5a=""><i data-v-551e5a="" class="mr-2 flag-icon flag-icon-en"></i> English</span></li><li data-v-551e5a="" class="dropdown-item"><span data-v-551e5a=""><i data-v-551e5a="" class="mr-2 flag-icon flag-icon-de"></i> German</span></li></ul></div>-->
+
+
+            <?php pll_the_languages(['show_flags' => true, 'show_names'=> true ]); ?>
+
+        </ul>
+    </div>
+
   <a href="#" class="menuActive" onclick="activeMenuFunction(this);">Home</a>
   <a href="#Profile" onclick="activeMenuFunction(this);">About Us</a>
   <a href="#ourTeam" onclick="activeMenuFunction(this);">Our Team</a>
