@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-sm-6  col-md-6 col-lg-4">
                             <?php echoTranslatedString('homeAboutUsText4'); ?>
-                            <b>Because Cuba is more than our job, it’s our passion.</b>
+                            <b><?php echoTranslatedString('homeAboutUsText5'); ?></b>
                         </div>
                     </div>
                 </div>

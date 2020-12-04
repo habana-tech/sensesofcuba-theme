@@ -217,19 +217,19 @@ function getGoogleTagManagerBody()
 
 function getIncentivesFileURL()
 {
-    $incentiveQuery = new WP_Query(array( 'pagename' => 'soc-incentive-and-mice-overview' ));
-    if ($incentiveQuery->is_page()) {
-        $pageID = $incentiveQuery->get_queried_object()->ID;
-        $incentiveFile = new Attachments('attachments', $pageID);
-        $incentiveFileUrl = null;
-        if ($incentiveFile->exist()) {
-            while ($attachment = $incentiveFile->get()) {
-                if ($incentiveFile->url() != null) {
-                    $incentiveFileUrl = $incentiveFile->url();
-                    return $incentiveFileUrl;
-                }
-                break;
-            }
+    $incentiveQuery = new WP_Query(['category_name'  => 'Mice',
+    'posts_per_page' => 1,
+    'lang' => 'en']);
+
+    if (count($incentiveQuery->posts) > 0) {
+        $post = $incentiveQuery->posts[0];
+        $currentPost = getPostOrTranslationIfNeededAndExist($post);
+
+        $content = $currentPost->post_content;
+        preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $content, $matches);
+
+        if (isset($matches[0][0])) {
+            return $matches[0][0];
         }
     }
     return false;
@@ -238,145 +238,184 @@ function getIncentivesFileURL()
 //Ading Translations
 pll_register_string('home_about_us_title', 'About Us', 'Homepage', true);
 
+
+
 function getTranslatedStringFromDict($string)
 {
     $dict = [
         'navHome' => [
             'en' => 'Home',
-            'de' => 'Home'
+            'de' => 'Home',
+            'es' => 'Inicio'
         ],
         'navAboutUs' => [
             'en' => 'About Us',
-            'de' => 'Über Uns'
+            'de' => 'Über Uns',
+            'es' => 'Sobre nosotros',
         ],
         'navOurTeam' => [
             'en' => 'Our Team',
-            'de' => 'Unser Team'
+            'de' => 'Unser Team',
+            'es' => 'Nuestro equipo',
         ],
         'navProductsLeisure' => [
             'en' => 'Products Leisure',
-            'de' => 'Produkte Leisure'
+            'de' => 'Produkte Leisure',
+            'es' => 'Productos Ocio',
         ],
         'navProductsMICE' => [
             'en' => 'Products MICE',
-            'de' => 'Produkte MICE'
+            'de' => 'Produkte MICE',
+            'es' => 'Productos MICE',
         ],
         'navMeetUs' => [
             'en' => 'Meet Us',
-            'de' => 'Meet Us'
+            'de' => 'Meet Us',
+            'es' => 'Encuéntranos',
         ],
         'navJobs' => [
             'en' => 'Jobs',
-            'de' => 'Job-Angebote'
+            'de' => 'Job-Angebote',
+            'es' => 'Empleos',
         ],
         'navNews' => [
             'en' => 'News',
-            'de' => 'News'
+            'de' => 'News',
+            'es' => 'Noticias',
         ],
         'navEvents' => [
             'en' => 'Events',
-            'de' => 'Events'
+            'de' => 'Events',
+            'es' => 'Ultimas noticias',
         ],
         'navTestimonial' => [
             'en' => 'Testimonial',
-            'de' => 'Kundenbewertungen'
+            'de' => 'Kundenbewertungen',
+            'es' => 'Testimonios',
         ],
         'navInfonet' => [
             'en' => 'Infonet',
-            'de' => 'Infonet'
+            'de' => 'Infonet',
+            'es' => 'Infonet'
         ],
         'navContactUs' => [
             'en' => 'Contact Us',
-            'de' => 'Kontaktieren sie Uns'
+            'de' => 'Kontaktieren sie Uns',
+            'es' => 'Contáctanos',
         ],
 //home
         'homeAboutUsTitleL1' => [
             'en' => 'ABOUT',
-            'de' => 'ÜBER'
+            'de' => 'ÜBER',
+            'es' => 'SOBRE',
         ],
         'homeAboutUsTitleL2' => [
             'en' => 'US',
-            'de' => 'UNS'
+            'de' => 'UNS',
+            'es' => 'NOSOTROS',
         ],
         'homeAboutUsText1' => [
             'en' => 'is your European DMC with a main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups,',
-            'de' => 'ist Ihre europäische Incoming-Agentur in Kuba - mit Hauptsitz im Herzen von Havanna, in der Nähe aller wichtigen Sehenswürdigkeiten und Hotels. Unser Service umfasst individualisierte Programme für FITs & Kleingruppen, Luxusreisen, Special Interest Gruppen,'
+            'de' => 'ist Ihre europäische Incoming-Agentur in Kuba - mit Hauptsitz im Herzen von Havanna, in der Nähe aller wichtigen Sehenswürdigkeiten und Hotels. Unser Service umfasst individualisierte Programme für FITs & Kleingruppen, Luxusreisen, Special Interest Gruppen,',
+            'es' => 'SENSES OF CUBA es una agencia de viajes con las oficinas principales en el corazón de La Habana, cerca de todos los Hoteles y lugares importantes. Enfocados en  ofrecer programas hechos a la medida para una clientela sofisticada y de alto nivel, que incluye viajes de lujo para individuales y grupos, viajes de interés especial, cruceros,'
         ],
         'homeAboutUsIncentive' => [
             'en' => 'incentive groups',
-            'de' => 'Incentive Gruppen'
+            'de' => 'Incentive Gruppen',
+            'es' => 'grupos de incentivo'
         ],
         'homeAboutUsText2' => [
             'en' => ", cruiseships and more. Profit from more than 16 years of experience in Cuba, a complex but fascinating destination. With a mixed European and Cuban team of about 30 professionals, we create unique programs and experiences for travellers showing both, the “nostalgic” and the “New Cuba”.  ",
             'de' => ", Kreuzfahrtunternehmen und vieles mehr. Dabei liegt unser Fokus auf einem anspruchsvollen, gehobenen Klientel. Profitieren Sie von mehr als 16 Jahren Erfahrung in Kuba, einem komplexen und gleichzeitig faszinierenden Reiseziel. 
-Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individuelle und einzigartige Reisen, die Ihnen sowohl das nostalgische als auch das moderne Kuba zeigen."
+Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individuelle und einzigartige Reisen, die Ihnen sowohl das nostalgische als auch das moderne Kuba zeigen.",
+        'es' => "y más, aprovechando nuestros más de 16 años de experiencia en Cuba, un destino complejo pero fascinante.
+        Con un equipo mixto de 25 profesionales  entre europeos y cubanos, creamos experiencias  y programas únicos para los viajeros, mostrándoles ambas, la “nostálgica” y la “NUEVA Cuba”."
         ],
         'homeAboutUsText3' => [
             'en' => "Bernd Herrmann (general manager and owner) living in Havana since 2001, and his team have created and managed a growing number of incentive- and tailormade programs in Cuba with clients from world renowned international companies reaching from the auto, finance, construction and food sector to the IT, insurance and pharmaceutical industry.",
-            'de' => "Bernd Herrmann, Firmeninhaber und Geschäftsführerm der bereits seit 2001 in Havanna lebt, bringt Ihnen, zusammen mit seinem Team, die unglaubliche Vielfalt Kubas näher und führt unter anderem eine stetig steigende Anzahl an Incentive Reisen und personalisierten Programmen für Kunden internationaler Firmen der Automobil-, Finanz-, Konstruktions-, Lebensmittelbranche bis hin zu namhaften IT- und Pharmakonzernen durch."
+            'de' => "Bernd Herrmann, Firmeninhaber und Geschäftsführerm der bereits seit 2001 in Havanna lebt, bringt Ihnen, zusammen mit seinem Team, die unglaubliche Vielfalt Kubas näher und führt unter anderem eine stetig steigende Anzahl an Incentive Reisen und personalisierten Programmen für Kunden internationaler Firmen der Automobil-, Finanz-, Konstruktions-, Lebensmittelbranche bis hin zu namhaften IT- und Pharmakonzernen durch.",
+            'es' => "Bernd Herrmann (Gerente General y dueño) vive en la Habana desde 2001 y justo a su equipo ha creado y manejado un creciente número de incentivos y programas hechos a la medida en Cuba, con clientes de compañías mundialmente reconocidas, las cuales van desde el sector automovilístico, financiero, de la construcción, y el culinario, hasta el sector de la informática, los seguros y la industria farmacéutica. "
         ],
         'homeAboutUsText4' => [
             'en' => "The Senses of Cuba team is here to share it’s passion with you by offering different aspects of Cuba that do not follow the mass tourism. Working with one collective mission. ",
-            'de' => "Unser Team von SENSES OF CUBA teilt seine Leidenschaft für Kuba mit Ihnen und zeigt Ihnen nebst den „Klassikern“ eine Vielfalt an unerwarteten und eindrucksvollen Aspekten der Insel, fernab vom Massentourismus. Ganz entsprechend unserer Firmenphilosophie: "
+            'de' => "Unser Team von SENSES OF CUBA teilt seine Leidenschaft für Kuba mit Ihnen und zeigt Ihnen nebst den „Klassikern“ eine Vielfalt an unerwarteten und eindrucksvollen Aspekten der Insel, fernab vom Massentourismus. Ganz entsprechend unserer Firmenphilosophie: ",
+            'es' => "El equipo de SENSES OF CUBA está aquí para compartir su pasión con usted, ofreciéndole diferentes aspectos de Cuba que no siguen los estándares del turismo de masa. Trabajando con una misión colectiva, "
+        ],
+        'homeAboutUsText5' => [
+            'en' => "Because Cuba is more than our job, it’s our passion.",
+            'es' => "porque Cuba es más que nuestro trabajo, es nuestra pasión."
         ],
 
         //TEAM section
         'teamSectionTitleL1' => [
             'en' => 'THIS IS',
-            'de' => 'Unser'
+            'de' => 'Unser',
+            'es' => 'ESTE ES'
         ],
         'teamSectionTitleL2' => [
             'en' => 'OUR TEAM',
-            'de' => 'Team'
+            'de' => 'Team',
+            'es' => 'NUESTRO EQUIPO'
         ],
         'teamAll' => [
             'en' => 'All',
-            'de' => 'Alle'
+            'de' => 'Alle',
+            'es' => 'Todos',
         ],
         'teamGM' => [
             'en' => 'GM',
-            'de' => 'Geschäftsführung'
+            'de' => 'Geschäftsführung',
+            'es' => 'Gerencia General',
         ],
         'teamSales' => [
             'en' => 'Sales',
-            'de' => 'Verkauf'
+            'de' => 'Verkauf',
+            'es' => 'Ventas',
         ],
         'teamProduct' => [
             'en' => 'Product',
-            'de' => 'Product Management'
+            'de' => 'Product Management',
+            'es' => 'Producto',
         ],
         'teamReservations' => [
             'en' => 'Reservations',
-            'de' => 'Reservierung'
+            'de' => 'Reservierung',
+            'es' => 'Reservas',
         ],
         'teamDatabase' => [
             'en' => 'Database',
-            'de' => 'Database'
+            'de' => 'Database',
+            'es' => 'Base de Datos',
         ],
         'teamOperations' => [
             'en' => 'Operations',
-            'de' => 'Operations'
+            'de' => 'Operations',
+            'es' => 'Operaciones',
         ],
         'teamClientsAssistance' => [
             'en' => 'Clients Assistance',
-            'de' => 'Kundenbetreuung'
+            'de' => 'Kundenbetreuung',
+            'es' => 'Asistencia a clientes',
         ],
         'teamAccounting' => [
             'en' => 'Accounting',
-            'de' => 'Buchhaltung'
+            'de' => 'Buchhaltung',
+            'es' => 'Contabilidad',
         ],
 //footer
         'footerContactUsL1' => [
             'en' => 'CONTACT',
-            'de' => 'KONTAKTIEREN SIE'
+            'de' => 'KONTAKTIEREN SIE',
+            'es' => 'CONTACTANOS',
         ],
         'footerContactUsL2' => [
             'en' => 'US',
-            'de' => 'UNS'
+            'de' => 'UNS',
+            'es' => '',
         ],
         'footerAddress' => [
             'en' => 'ADDRESS',
-            'de' => 'ADRESSE'
+            'de' => 'ADRESSE',
         ],
         'footerGeneralContact' => [
             'en' => 'GENERAL CONTACT',
@@ -450,35 +489,42 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         //section NEWS
         'newsTitleL1' => [
             'en' => 'LATEST',
-            'de' => 'NEUIGKEITEN'
+            'de' => 'NEUIGKEITEN',
+            'es' => 'ULTIMAS',
         ],
         'newsTitleL2' => [
             'en' => 'NEWS',
-            'de' => ''
+            'de' => '',
+            'es' => 'NOTICIAS',
         ],
         //Testimonial section
         'testimonialTitle' => [
             'en' => 'TESTIMONIAL',
-            'de' => 'KUNDENBEWERTUNGEN'
+            'de' => 'KUNDENBEWERTUNGEN',
+            'es' => 'TESTIMONIOS',
         ],
         //Products section
         'productsTitleL1' => [
             'en' => 'PRODUCTS',
-            'de' => 'PRODUKTE'
+            'de' => 'PRODUKTE',
+            'es' => 'PRODUCTOS',
         ],
         'productsTitleL2' => [
             'en' => 'LEISURE & MICE',
-            'de' => 'LEISURE UND MICE'
+            'de' => 'LEISURE UND MICE',
+            'es' => 'OCIO & MICE',
         ],
         //news section
 
         'newsReadMore' => [
             'en' => 'Read more',
-            'de' => 'Weiterlesen'
+            'de' => 'Weiterlesen',
+            'es' => 'Leer más',
         ],
         'newsAllNews' => [
             'en' => 'All News',
-            'de' => 'Alle Nachrichten'
+            'de' => 'Alle Nachrichten',
+            'es' => 'Más noticias',
         ],
     ];
 
@@ -517,5 +563,5 @@ function getPostOrTranslationIfNeededAndExist($postObject)
         }
     }
 
-    return ( isNeededTranslation() && $translation != null) ? $translation : $postObject;
+    return (isNeededTranslation() && $translation != null) ? $translation : $postObject;
 }
