@@ -91,7 +91,7 @@ echo  $currentLang->name. " " .$currentLang->flag. " ";
   <?php endif;?>
   <a href="#Testimonial" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navTestimonial'); ?></a>
   
-  <a href="http://infonet.tourcomcuba.com/" onclick="activeMenuFunction(this)">Infonet</a>
+  <a href="http://infonet.tourcomcuba.com/" target="_blank" onclick="activeMenuFunction(this)">Infonet</a>
   <a href="#ContactUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navContactUs'); ?></a>
 
     <div class="social-btn">

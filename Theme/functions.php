@@ -440,27 +440,27 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'footerProductManagement' => [
             'en' => 'PRODUCT MANAGEMENT',
-            'es' => 'GESTIÓN DE PRODUCTOS',
+            'es' => 'GERENCIA DE PRODUCTO',
             'de' => 'PRODUKT MANAGEMENT'
         ],
         'footerOpeningTimes' => [
             'en' => 'OPENING TIMES',
-            'es' => 'HORARIOS DE SERVICIO',
+            'es' => 'HORARIOS DE APERTURA',
             'de' => 'BÜRO-ÖFFNUNGSZEITEN'
         ],
         'footerOpeningTimesValue' => [
             'en' => 'Monday-Friday: 09:00-17:00',
-            'es' => 'Lunes-Viernes: 9am - 5pm',
+            'es' => 'Lunes-Viernes: 09:00-17:00',
             'de' => 'Montag – Freitag: 9:00 – 17:00 Uhr'
         ],
         'footerOpeningTimesValue2' => [
             'en' => 'Saturday-Sunday (and public holidays):',
-            'es' => 'Sábados-Domingos (y días festivos):',
+            'es' => 'Sábados-Domingos (y días feriados):',
             'de' => 'Samstag – Sonntag (und an öffentlichen Feiertagen):'
         ],
         'footerOpeningTimesValue3' => [
             'en' => '10:00-16:00',
-            'es' => '10am - 4pm',
+            'es' => '10:00-16:00',
             'de' => '10:00 – 16:00 Uhr'
         ],
         'footerFOLLOW_US_ON' => [
