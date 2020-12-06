@@ -8,8 +8,8 @@ $count =0;?>
     <section id="MeetUs" >
         <div class="container pt-5">
             <div style="text-align: center;margin-bottom:10px; ">
-                <h2 class="mx-auto text-black" style="line-height: 25px;" >MEET </h2>
-                <h2 class="mx-auto yellowTitle" style="line-height: 25px;">US</h2>
+                <h2 class="mx-auto text-black" style="line-height: 25px;" ><?php echo echoTranslatedString('meetUsTitleL1'); ?>  </h2>
+                <h2 class="mx-auto yellowTitle" style="line-height: 25px;"><?php echo echoTranslatedString('meetUsTitleL2'); ?></h2>
             </div>
             <div class="row pb-5">
                 <?php while ($mp->have_posts()) : $mp->the_post();?>

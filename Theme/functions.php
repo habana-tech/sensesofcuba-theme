@@ -415,51 +415,63 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'footerAddress' => [
             'en' => 'ADDRESS',
+            'es' => 'DIRECCIÓN',
             'de' => 'ADRESSE',
         ],
         'footerGeneralContact' => [
             'en' => 'GENERAL CONTACT',
+            'es' => 'CONTACTO GENERAL',
             'de' => 'ALLGEMEINER KONTAKT'
         ],
         'footerPhone' => [
             'en' => 'PHONE',
+            'es' => 'TELÉFONO',
             'de' => 'TELEFON'
         ],
         'footerSales' => [
             'en' => 'SALES',
+            'es' => 'VENTAS',
             'de' => 'SALES'
         ],
         'footerEmergencyPhone' => [
             'en' => 'EMERGENCY PHONE',
+            'es' => 'TELÉFONOS DE EMERGENCIA',
             'de' => 'NOTFALLTELEFON'
         ],
         'footerProductManagement' => [
             'en' => 'PRODUCT MANAGEMENT',
+            'es' => 'GESTIÓN DE PRODUCTOS',
             'de' => 'PRODUKT MANAGEMENT'
         ],
         'footerOpeningTimes' => [
             'en' => 'OPENING TIMES',
+            'es' => 'HORARIOS DE SERVICIO',
             'de' => 'BÜRO-ÖFFNUNGSZEITEN'
         ],
         'footerOpeningTimesValue' => [
             'en' => 'Monday-Friday: 09:00-17:00',
+            'es' => 'Lunes-Viernes: 9am - 5pm',
             'de' => 'Montag – Freitag: 9:00 – 17:00 Uhr'
         ],
         'footerOpeningTimesValue2' => [
             'en' => 'Saturday-Sunday (and public holidays):',
+            'es' => 'Sábados-Domingos (y días festivos):',
             'de' => 'Samstag – Sonntag (und an öffentlichen Feiertagen):'
         ],
         'footerOpeningTimesValue3' => [
             'en' => '10:00-16:00',
+            'es' => '10am - 4pm',
             'de' => '10:00 – 16:00 Uhr'
         ],
         'footerFOLLOW_US_ON' => [
             'en' => 'FOLLOW US ON',
-            'de' => 'FOLGEN SIE UNS AUF'
+            'de' => 'FOLGEN SIE UNS AUF',
+            'es' => 'SÍGUENOS EN',
         ],
         'footerAll_rights_reserved' => [
             'en' => 'All rights reserved',
-            'de' => 'Alle Rechte vorbehalten'
+            'de' => 'Alle Rechte vorbehalten',
+            'es' => 'Todos los derechos reservados',
         ],
         'footerImprint' => [
             'en' => 'Imprint',
@@ -467,23 +479,39 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'footerPrivacyPolicy' => [
             'en' => 'Privacy Policy',
+            'es' => 'Política de Privacidad',
             'de' => 'Datenschutzbestimmungen '
         ],
         'footerGeneralTermsAndConditions' => [
             'en' => 'General Terms and Conditions',
+            'es' => 'Términos y Condiciones Generales',
             'de' => 'Allgemeine Geschäftsbedingungen'
         ],
         'footerCooperations' => [
             'en' => 'Cooperations',
+            'es' => 'Cooperaciones',
             'de' => 'Kooperationen'
+        ],
+        //mEETus
+        'meetUsTitleL1' => [
+            'en' => 'MEET',
+            'es' => 'ENCUÉNTRANOS',
+            'de' => 'MEET'
+        ],
+        'meetUsTitleL2' => [
+            'en' => 'US',
+            'es' => '',
+            'de' => 'US'
         ],
         //JOBS
         'jobsTitle' => [
             'en' => 'JOBS',
+            'es' => 'EMPLEOS',
             'de' => 'Job-Angebote'
         ],
         'jobsView' => [
             'en' => 'VIEW',
+            'es' => 'VER',
             'de' => 'ÖFFNEN'
         ],
         //section NEWS
@@ -557,7 +585,7 @@ function getPostOrTranslationIfNeededAndExist($postObject)
         $translations = pll_get_post_translations($originalPostId);
         if (isset($translations[pll_current_language()])) {
             $translation = get_post($translations[pll_current_language()]);
-            if ($translation->post_status != 'publish') {
+            if ($translation->post_status != 'publish') { //only of post is published
                 $translation = null;
             }
         }
