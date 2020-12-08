@@ -68,7 +68,7 @@
                 $productDescription = strtoupper($postDescription);
 
                 $itemMarkup = "<img src='$productPhotoUrl' style='width: 100%' alt='$productDescription'>
-                            <span class='product-text boldText'>$productDescription</span>";
+                            <span class='product-text boldText uppercase'>$productDescription</span>";
 
 
                 if ($postItem->__get('product_description') === $incentivesCategoryStr && $incentivesFileURL) {

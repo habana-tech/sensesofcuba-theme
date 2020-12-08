@@ -300,8 +300,8 @@ function getTranslatedStringFromDict($string)
         ],
         'navContactUs' => [
             'en' => 'Contact Us',
-            'de' => 'Kontaktieren sie Uns',
-            'es' => 'Contáctanos',
+            'de' => 'Kontakt',
+            'es' => 'Contéctanos',
         ],
 //home
         'homeAboutUsTitleL1' => [
@@ -317,7 +317,7 @@ function getTranslatedStringFromDict($string)
         'homeAboutUsText1' => [
             'en' => 'is your European DMC with a main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups,',
             'de' => 'ist Ihre europäische Incoming-Agentur in Kuba - mit Hauptsitz im Herzen von Havanna, in der Nähe aller wichtigen Sehenswürdigkeiten und Hotels. Unser Service umfasst individualisierte Programme für FITs & Kleingruppen, Luxusreisen, Special Interest Gruppen,',
-            'es' => 'SENSES OF CUBA es una agencia de viajes con las oficinas principales en el corazón de La Habana, cerca de todos los Hoteles y lugares importantes. Enfocados en  ofrecer programas hechos a la medida para una clientela sofisticada y de alto nivel, que incluye viajes de lujo para individuales y grupos, viajes de interés especial, cruceros,'
+            'es' => 'es una agencia de viajes con las oficinas principales en el corazón de La Habana, cerca de todos los Hoteles y lugares importantes. Enfocados en  ofrecer programas hechos a la medida para una clientela sofisticada y de alto nivel, que incluye viajes de lujo para individuales y grupos, viajes de interés especial, cruceros,'
         ],
         'homeAboutUsIncentive' => [
             'en' => 'incentive groups',
@@ -343,7 +343,8 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'homeAboutUsText5' => [
             'en' => "Because Cuba is more than our job, it’s our passion.",
-            'es' => "porque Cuba es más que nuestro trabajo, es nuestra pasión."
+            'de' => "Cuba is more than our job, it’s our passion.",
+            'es' => "porque Cuba is more than our job, it’s our passion."
         ],
 
         //TEAM section
@@ -406,7 +407,7 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         'footerContactUsL1' => [
             'en' => 'CONTACT',
             'de' => 'KONTAKTIEREN SIE',
-            'es' => 'CONTACTANOS',
+            'es' => 'CONTACTENOS',
         ],
         'footerContactUsL2' => [
             'en' => 'US',
@@ -417,6 +418,11 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
             'en' => 'ADDRESS',
             'es' => 'DIRECCIÓN',
             'de' => 'ADRESSE',
+        ],
+        'footerAddressL2' => [
+            'en' => '10100, La Habana Vieja, Havana, Cuba.',
+            'es' => '10100, La Habana Vieja, La Habana, Cuba.',
+            'de' => '10100, La Habana Vieja, La Habana, Cuba.',
         ],
         'footerGeneralContact' => [
             'en' => 'GENERAL CONTACT',
@@ -431,16 +437,16 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         'footerSales' => [
             'en' => 'SALES',
             'es' => 'VENTAS',
-            'de' => 'SALES'
+            'de' => 'VERKAUF'
         ],
         'footerEmergencyPhone' => [
             'en' => 'EMERGENCY PHONE',
-            'es' => 'TELÉFONOS DE EMERGENCIA',
+            'es' => 'TELÉFONO DE EMERGENCIA',
             'de' => 'NOTFALLTELEFON'
         ],
         'footerProductManagement' => [
             'en' => 'PRODUCT MANAGEMENT',
-            'es' => 'GERENCIA DE PRODUCTO',
+            'es' => 'PRODUCT MANAGEMENT',
             'de' => 'PRODUKT MANAGEMENT'
         ],
         'footerOpeningTimes' => [
@@ -456,7 +462,7 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         'footerOpeningTimesValue2' => [
             'en' => 'Saturday-Sunday (and public holidays):',
             'es' => 'Sábados-Domingos (y días feriados):',
-            'de' => 'Samstag – Sonntag (und an öffentlichen Feiertagen):'
+            'de' => 'Samstag – Sonntag (und Feiertagen):'
         ],
         'footerOpeningTimesValue3' => [
             'en' => '10:00-16:00',
@@ -539,8 +545,8 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'productsTitleL2' => [
             'en' => 'LEISURE & MICE',
-            'de' => 'LEISURE UND MICE',
-            'es' => 'OCIO & MICE',
+            'de' => 'LEISURE & MICE',
+            'es' => 'LEISURE & MICE',
         ],
         //news section
 
