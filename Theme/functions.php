@@ -301,7 +301,7 @@ function getTranslatedStringFromDict($string)
         'navContactUs' => [
             'en' => 'Contact Us',
             'de' => 'Kontakt',
-            'es' => 'Contéctanos',
+            'es' => 'Contáctenos',
         ],
 //home
         'homeAboutUsTitleL1' => [
