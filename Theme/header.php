@@ -62,7 +62,7 @@
         </ul>
     </div>
 
-  <a href="<?php echo $homeUrl ?>#" class="menuActive" onclick="activeMenuFunction(this);">Home</a>
+  <a href="<?php echo $homeUrl; ?>#" class="menuActive" onclick="activeMenuFunction(this);">Home</a>
   <a href="<?php echo $homeUrl; ?>#Profile" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navAboutUs'); ?></a>
   <a href="<?php echo $homeUrl; ?>#ourTeam" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navOurTeam'); ?></a>
   <a href="<?php echo $homeUrl; ?>#ProductSection" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navProductsLeisure'); ?></a>
