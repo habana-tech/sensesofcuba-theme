@@ -21,8 +21,9 @@
 <?php echo getGoogleTagManagerBody(); ?>
 
 <?php    
-  $newsQuery=new WP_Query(array('category_name'  => 'News'));
-  $eventsQuery=new WP_Query(array('category_name'  => 'Events'));
+  $newsQuery=new WP_Query(array('category_name'  => 'News', 'lang' => 'en'));
+  $eventsQuery=new WP_Query(array('category_name'  => 'Events', 'lang' => 'en'));
+  $homeUrl = home_url();
 ?>
     
 
@@ -59,19 +60,14 @@ echo  $currentLang->name. " " .$currentLang->flag. " ";
             </span></a>
         <!---->
         <ul class="dropdown-menu" style="background: rgba(0,0,0,.9);">
-
-            <!--            <li data-v-551e5a="" class="dropdown-item"><span data-v-551e5a=""><i data-v-551e5a="" class="mr-2 flag-icon flag-icon-en"></i> English</span></li><li data-v-551e5a="" class="dropdown-item"><span data-v-551e5a=""><i data-v-551e5a="" class="mr-2 flag-icon flag-icon-de"></i> German</span></li></ul></div>-->
-
-
             <?php pll_the_languages(['show_flags' => true, 'show_names'=> true ]); ?>
-
         </ul>
     </div>
 
-  <a href="#" class="menuActive" onclick="activeMenuFunction(this);">Home</a>
-  <a href="#Profile" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navAboutUs'); ?></a>
-  <a href="#ourTeam" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navOurTeam'); ?></a>
-  <a href="#ProductSection" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navProductsLeisure'); ?></a>
+  <a href="<?php echo $homeUrl ?>#" class="menuActive" onclick="activeMenuFunction(this);">Home</a>
+  <a href="<?php echo $homeUrl; ?>#Profile" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navAboutUs'); ?></a>
+  <a href="<?php echo $homeUrl; ?>#ourTeam" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navOurTeam'); ?></a>
+  <a href="<?php echo $homeUrl; ?>#ProductSection" onclick="activeMenuFunction(this);"><?php echoTranslatedString('navProductsLeisure'); ?></a>
 
     <?php
     if($fileURL = getIncentivesFileURL())
@@ -81,18 +77,18 @@ echo  $currentLang->name. " " .$currentLang->flag. " ";
     <?php
     }
     ?>
-  <a href="#MeetUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navMeetUs'); ?></a>
+  <a href="<?php echo $homeUrl; ?>#MeetUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navMeetUs'); ?></a>
   <a href="#Jobs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navJobs'); ?></a>
   <?php if($eventsQuery->have_posts()):?>  
   <a href="#Events" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navEvents'); ?></a>
   <?php endif;?>
   <?php if($newsQuery->have_posts()):?>  
-  <a href="#News" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navNews'); ?></a>
+  <a href="<?php echo $homeUrl; ?>#News" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navNews'); ?></a>
   <?php endif;?>
-  <a href="#Testimonial" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navTestimonial'); ?></a>
+  <a href="<?php echo $homeUrl; ?>#Testimonial" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navTestimonial'); ?></a>
   
-  <a href="http://infonet.tourcomcuba.com/" target="_blank" onclick="activeMenuFunction(this)">Infonet</a>
-  <a href="#ContactUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navContactUs'); ?></a>
+  <a href="https://infonet.sensesofcuba.com/" target="_blank" onclick="activeMenuFunction(this)">Infonet</a>
+  <a href="<?php echo $homeUrl; ?>#ContactUs" onclick="activeMenuFunction(this)"><?php echoTranslatedString('navContactUs'); ?></a>
 
     <div class="social-btn">
         <a href="https://www.instagram.com/sensesofcuba/" title="Follow us on Instagram">
