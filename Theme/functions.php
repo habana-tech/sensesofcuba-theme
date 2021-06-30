@@ -1,6 +1,29 @@
 <?php
 require_once('wp-bootstrap-navwalker.php');
 
+$PLL_PLUGIN_INSTALLED = true;
+if (!function_exists('pll_register_string')) {
+    $PLL_PLUGIN_INSTALLED = false;
+
+    function pll_register_string($arg1, $arg2, $arg3, $arg4)
+    {
+        return null;
+    }
+    function pll_current_language(){
+        return 'en';
+    }
+    function pll_default_language(){
+        return 'en';
+    }
+    function pll_get_post_translations(){
+        return null;
+    }
+    function pll_the_languages(){
+        return null;
+    }
+}
+
+
 function my_theme_setup()
 {
     // Ready for i18n

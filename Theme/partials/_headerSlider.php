@@ -62,7 +62,7 @@ if (!empty($image)): ?>
     <?php if (!empty(get_field('slider2_link'))): ?>
         <a href="#News">
     <?php endif; ?>
-        <img src="<?php echo $image2['url']; ?>" alt="<?php echo the_field('slider_title_2'); ?>" />
+        <img src="<?php echo $image2['url']?? ''; ?>" alt="<?php echo the_field('slider_title_2'); ?>" />
         <?php if (!empty(get_field('slider1_link'))): ?>
         </a>
         <?php endif; ?>
