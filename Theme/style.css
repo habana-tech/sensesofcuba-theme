@@ -811,3 +811,12 @@ section#News .news_text_column .translations_list li{
     font-size: .8em;
 }
 
+.footer-navigation a{
+    color: rgb(33, 37, 41);
+    text-decoration: none;
+}
+
+.footer-navigation a:hover{
+    color: #000;
+    text-decoration: none;
+}

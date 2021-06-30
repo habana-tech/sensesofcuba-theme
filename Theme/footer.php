@@ -95,16 +95,28 @@ Aquí va el contenido del pie de página
 <!--END TIRA HAVANA-->
 
 
-<div class="yellowBackground container-fluid" class="p-5">
-
-	<span class="mx-auto d-block pt-4 text-center" style="">© <?php echoTranslatedString('footerAll_rights_reserved'); ?></span>
+<div class="yellowBackground container-fluid footer-navigation" class="p-5">
+	<span class="mx-auto d-block pt-4 text-center" style="">
+        © <?php echoTranslatedString('footerAll_rights_reserved'); ?>
+    </span>
 	<div id="inline" class="mx-auto text-center" style="">
-		<a  id="fancybox" class="fancy"><?php echoTranslatedString('footerImprint'); ?></a>
-        | <a class="fancy"  id="fancybox-Date"><?php echoTranslatedString('footerPrivacyPolicy'); ?></a>
-        | <a class="fancy"  id="fancybox-Cooperators"><?php echoTranslatedString('footerCooperations'); ?></a>
+
+        <a href="<?php echo getPageLinkBySlug('legal-notice'); ?>">
+            <?php echoTranslatedString('footerImprint'); ?>
+        </a>
+        |
+        <a href="<?php echo getPageLinkBySlug('privacy-policy'); ?>">
+            <?php echoTranslatedString('footerPrivacyPolicy'); ?>
+        </a>
+        |
+        <a href="<?php  echo getPageLinkBySlug('cooperation'); ?>">
+            <?php echoTranslatedString('footerCooperations'); ?>
+        </a>
 	</div>
 	<div id="inline" class="mx-auto pb-1 text-center" style="">
-		<a  id="fancybox-general" class="fancy"><?php echoTranslatedString('footerGeneralTermsAndConditions'); ?></a>
+		<a href="<?php echo getPageLinkBySlug('general-terms'); ?>">
+            <?php echoTranslatedString('footerGeneralTermsAndConditions'); ?>
+        </a>
 	</div>
 </div>
 
@@ -135,9 +147,13 @@ function testimonialModal(element){
 
 
 $(function () {
-	$('li.indicatorCarrusel:first-child').addClass('active');$('#testimonial .item.carousel-item:first-child').addClass('active');$('[data-toggle="tooltip"]').tooltip();
-	$("#fancybox-general").click(function(){$.fancybox.open({href:'<?php  echo get_template_directory_uri() . "/static_generalConditions.html"?>',type:'iframe',padding:15,openEffect:'elastic',openSpeed:150,closeEffect:'elastic',closeSpeed:150,closeClick:true});});
-	$("#data").fancybox(); $("#fancybox").click(function(){$.fancybox.open({href:'<?php  echo get_template_directory_uri() . "/static_impresum.html"?>',type:'iframe',padding:15,openEffect:'elastic',openSpeed:150,closeEffect:'elastic',closeSpeed:150,closeClick:true});});$("#fancybox-Date").click(function(){$.fancybox.open({href:'<?php  echo get_template_directory_uri() . "/static_datens.html"?>',type:'iframe',padding:15,openEffect:'elastic',openSpeed:150,closeEffect:'elastic',closeSpeed:150,closeClick:true});});$("#fancybox-Cooperators").click(function(){$.fancybox.open({href:'<?php  echo get_template_directory_uri() . "/static_colaborators.html"?>',type:'iframe',padding:15,openEffect:'elastic',openSpeed:150,closeEffect:'elastic',closeSpeed:150,closeClick:true});});$(document).scroll(function() {var scrollTop = $(window).scrollTop();if (scrollTop >= 100 ) {$('.menu-container').addClass('menu-bar');var logotext=$('#img_logo').attr('src').split('/')[$('#img_logo').attr('src').split('/').length-1];if (logotext="logo.png" ) {$('#img_logo').attr('src',$('#img_logo').attr('src').replace('logo','soc'));}$('#logo_img').removeClass('ImgBar').addClass('logoImgBar');$('#img_logo,#logo_img').css('top','8px');}else{$('.menu-container').removeClass('menu-bar');var logotext=$('#img_logo').attr('src').split('/')[$('#img_logo').attr('src').split('/').length-1];if (logotext="soc.png"){$('#img_logo').attr('src',$('#img_logo').attr('src').replace('soc','logo'));}$('#logo_img').removeClass('logoImgBar').addClass('logoImg');$('#img_logo,#logo_img').css('top','2%');}
+	$('li.indicatorCarrusel:first-child').addClass('active');
+	$('#testimonial .item.carousel-item:first-child').addClass('active');
+	$('[data-toggle="tooltip"]').tooltip();
+	
+	$(document).scroll(function() {
+	    var scrollTop = $(window).scrollTop();if (scrollTop >= 100 ) {$('.menu-container').addClass('menu-bar');
+	        var logotext=$('#img_logo').attr('src').split('/')[$('#img_logo').attr('src').split('/').length-1];if (logotext="logo.png" ) {$('#img_logo').attr('src',$('#img_logo').attr('src').replace('logo','soc'));}$('#logo_img').removeClass('ImgBar').addClass('logoImgBar');$('#img_logo,#logo_img').css('top','8px');}else{$('.menu-container').removeClass('menu-bar');var logotext=$('#img_logo').attr('src').split('/')[$('#img_logo').attr('src').split('/').length-1];if (logotext="soc.png"){$('#img_logo').attr('src',$('#img_logo').attr('src').replace('soc','logo'));}$('#logo_img').removeClass('logoImgBar').addClass('logoImg');$('#img_logo,#logo_img').css('top','2%');}
 	});
 });
 

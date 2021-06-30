@@ -123,3 +123,9 @@ Meeting & Conferences, Vips & Delegations, Accommodation, Excursion, Rental Cars
     </div>
 </div>
 
+
+<div id="logo_img" style=" position:fixed;left: 50%;transform: translate(-50%, 0px);" class="logoImg">
+    <img id="img_logo"  class="mx-auto" src="
+<?php  echo get_template_directory_uri() . '/assets/images/logo.png'?>
+            " alt="SenseOfCubaLogo">
+</div>

@@ -187,7 +187,6 @@ function getGoogleTagManagerHeader(): string
 </script>
 
 ANALITYCTAG;
-
 }
 
 
@@ -574,4 +573,19 @@ function getPostOrTranslationIfNeededAndExist($postObject)
     }
 
     return (isNeededTranslation() && $translation != null) ? $translation : $postObject;
+}
+
+function getPageObjectBySlug(string $slug): ?WP_Post
+{
+    $page = new WP_Query(['pagename'  => $slug, 'post_type' => 'page']);
+    if ($page->post instanceof WP_Post && $page->is_page) {
+        return $page->post;
+    }
+    return null;
+}
+
+function getPageLinkBySlug(string $slug): string
+{
+    $page = getPageObjectBySlug($slug);
+    return $page ? get_page_link(getPageObjectBySlug($slug)) : '#';
 }

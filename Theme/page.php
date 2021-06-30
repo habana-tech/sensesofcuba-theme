@@ -7,11 +7,13 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
  
 <?php get_header();?>
- 
-<main class="main-content">
- 
+
+
+<main class="main-content" style="margin-top: clamp(100px, 30vh, 170px);">
+
     <?php if (have_posts()) :
- 
+
+
         while (have_posts()) : the_post();?>
  
             <div class="container">
