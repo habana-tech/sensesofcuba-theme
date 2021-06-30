@@ -24,7 +24,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
  
 
 <body <?php body_class();?>>
-    <?php echo getGoogleTagManagerBody(); ?>
 
     <!-- MENU -->
     <div class="menu-container menu-bar">

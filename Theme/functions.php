@@ -46,7 +46,7 @@ function theme_enqueue_styles()
     wp_register_style('slickStyle', get_template_directory_uri() . '/assets/css/slick.css');
     wp_register_style('slickThemeStyle', get_template_directory_uri() . '/assets/css/slick-theme.css');
     wp_register_style('socialIcons', get_template_directory_uri() . '/assets/social/css/fontello.css');
-    $dependencies = array('bootstrap','baseStyle','aosStyle','fancyboxStyle','slickStyle','slickThemeStyle', 'socialIcons');
+    $dependencies = ['bootstrap','baseStyle','aosStyle','fancyboxStyle','slickStyle','slickThemeStyle', 'socialIcons'];
     wp_enqueue_style('bootstrapstarter-style', get_stylesheet_uri(), $dependencies);
 }
 
@@ -80,7 +80,7 @@ function my_theme_remove_headlinks()
 }
 add_action('init', 'my_theme_remove_headlinks');
 
-function my_theme_excerpt($length)
+function my_theme_excerpt($length): int
 {
     return 25;
 }
@@ -151,7 +151,7 @@ function my_attachments($attachments)
 
 add_action('attachments_register', 'my_attachments');
 
-function custom_excerpt($text, $length)
+function custom_excerpt($text, $length): string
 {
     $text = strip_shortcodes($text);
     $text = apply_filters('the_content', $text);
@@ -171,7 +171,7 @@ function custom_excerpt($text, $length)
 //add_action('get_header', 'wp_maintenance_mode');
 
 
-function getGoogleTagManagerHeader()
+function getGoogleTagManagerHeader(): string
 {
     return <<<ANALITYCTAG
 
@@ -188,30 +188,6 @@ function getGoogleTagManagerHeader()
 
 ANALITYCTAG;
 
-//    return <<<TAGMANAGER
-//
-//<!-- Google Tag Manager -->
-//<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-//            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-//        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-//        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-//    })(window,document,'script','dataLayer','GTM-MRG9TDZ');</script>
-//<!-- End Google Tag Manager -->
-//
-//TAGMANAGER;
-}
-
-function getGoogleTagManagerBody()
-{
-    return;
-//    return <<<TAGMANAGER
-//
-//<!-- Google Tag Manager (noscript) -->
-//<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRG9TDZ"
-//                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-//<!-- End Google Tag Manager (noscript) -->
-//
-//TAGMANAGER;
 }
 
 
@@ -480,8 +456,8 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
             'es' => 'Todos los derechos reservados',
         ],
         'footerImprint' => [
-            'en' => 'Imprint',
-            'de' => 'Druck'
+            'en' => 'Legal Notice',
+            'de' => 'Legal Notice'
         ],
         'footerPrivacyPolicy' => [
             'en' => 'Privacy Policy',
