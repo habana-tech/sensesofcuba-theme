@@ -479,7 +479,8 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
         ],
         'footerImprint' => [
             'en' => 'Legal Notice',
-            'de' => 'Legal Notice'
+            'es' => 'Legal',
+            'de' => 'Impressum'
         ],
         'footerPrivacyPolicy' => [
             'en' => 'Privacy Policy',
