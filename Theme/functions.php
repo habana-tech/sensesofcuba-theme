@@ -9,16 +9,20 @@ if (!function_exists('pll_register_string')) {
     {
         return null;
     }
-    function pll_current_language(){
+    function pll_current_language()
+    {
         return 'en';
     }
-    function pll_default_language(){
+    function pll_default_language()
+    {
         return 'en';
     }
-    function pll_get_post_translations(){
+    function pll_get_post_translations()
+    {
         return null;
     }
-    function pll_the_languages(){
+    function pll_the_languages()
+    {
         return null;
     }
 }
@@ -238,7 +242,7 @@ pll_register_string('home_about_us_title', 'About Us', 'Homepage', true);
 
 
 
-function getTranslatedStringFromDict($string)
+function getTranslatedStringFromDict($string): string
 {
     $dict = [
         'navHome' => [
@@ -418,9 +422,7 @@ Unser europäisch-kubanisches Team aus 25 Mitarbeitern erstellt für Sie individ
             'de' => 'ADRESSE',
         ],
         'footerAddressL2' => [
-            'en' => '10100, La Habana Vieja, Havana, Cuba.',
-            'es' => '10100, La Habana Vieja, La Habana, Cuba.',
-            'de' => '10100, La Habana Vieja, La Habana, Cuba.',
+            'en' => 'Vedado, Plaza , Havana, CUBA',
         ],
         'footerGeneralContact' => [
             'en' => 'GENERAL CONTACT',
