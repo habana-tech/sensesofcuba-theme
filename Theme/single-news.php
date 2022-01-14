@@ -4,17 +4,6 @@
 */
 get_header() ?>
 
-
- <div>
-<!--         style="    width: 100%;-->
-<!--    padding: .0em 1em;-->
-<!--    margin-top: calc(3em);"-->
-
-<!---->
-<!--     <h2 class="yellowTitle" style="font-size:20px">--><?php //echo get_the_title(); ?><!-- </h2>-->
-<!---->
-<!--     <span style="font-size:10px;color:grey">Published: --><?php //echo $datePublished; ?><!--</span>-->
-
   <?php
 
   $currentId = get_the_ID();
@@ -32,7 +21,7 @@ get_header() ?>
       $defaultLangPostFields = get_fields($defaultLangPostId);
 
                         $dateformatstring = "d F, Y";
-                        $unixtimestamp = strtotime(get_field('new_date')); ?></h2>
+                        $unixtimestamp = strtotime(get_field('new_date')); ?>
                         <?php
 
                         $currentImage = null;
@@ -79,47 +68,14 @@ get_header() ?>
                       
                     <div class="col-md-8 mx-auto">
                      <?php the_content();?>
-
-
-                       <article  >
-          <?php
-          //retrieve all Attachments for the 'attachments' instance of post 123
-          $attachments = new Attachments( 'attachments' );?>
-          <?php if( $attachments->exist()) : ?>
-          <h3>Attachments</h3>
-          <div class="row">
-              <?php while( $attachment = $attachments->get() ) : ?>
-              <div class="col-12">
-              <figure class="figure ">
-              <img class=" figure-img w-100 "  src="<?php echo $attachments->url() ?>" >
-                <figcaption class="figure-caption" style="background-color: #f0f0f0;padding: 10px;margin-top: -10px;">
-                <span> <?php echo $attachments->field( 'caption' );?></span>
-
-
-                </figcaption>
-              </figure>
-              </div>
-              <?php endwhile; ?>
-              </div>
-              <?php endif; ?>
-
-              
-              <!--  <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-              </div>-->
-            </div><!-- entry-content -->
-            </article>
                     </div>
                 </div><!-- row -->
             </div><!-- container -->
-        <?php endwhile; endif;?>
-<?php
-// If comments are open or we have at least one comment, load up the comment template.
-/*            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
-            */
-?>
+        <?php
+        endwhile;
+        endif;
+        ?>
+
 
 </main>
 

@@ -95,7 +95,7 @@ Aquí va el contenido del pie de página
 <!--END TIRA HAVANA-->
 
 
-<div class="yellowBackground container-fluid footer-navigation" class="p-5">
+<div class="yellowBackground container-fluid footer-navigation p-5">
 	<span class="mx-auto d-block pt-4 text-center" style="">
         © <?php echoTranslatedString('footerAll_rights_reserved'); ?>
     </span>
