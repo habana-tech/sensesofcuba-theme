@@ -25,7 +25,7 @@ get_header() ?>
                         <?php
 
                         $currentImage = null;
-                        if(($image = get_field('new_images')) && is_array($image) && !empty($image))
+                        if(($image = getAttachmentPost(get_field('new_images'))) && is_array($image) && !empty($image))
                             { $currentImage = $image; }
                         elseif (isset($defaultLangPostFields['image_1']) && ($image = $defaultLangPostFields['image_1']) && !empty($image))
                         {
@@ -37,9 +37,9 @@ get_header() ?>
                             <?php if(isset($currentImage['url'])): ?>
                                 <img class="img-responsive" src="<?php echo $currentImage['url']; ?>" style="width: 100%;max-height: 720px"
                                 <?php
-                                    if(isset($currentImage['alt']))
+                                    if(isset($currentImage['title']))
                                     {
-                                        echo  'alt="' . $currentImage['alt'] . '"';
+                                        echo  'alt="' . $currentImage['title'] . '"';
                                     }
                                     else { echo 'alt="'. the_title() .'"'; }
                                 ?>

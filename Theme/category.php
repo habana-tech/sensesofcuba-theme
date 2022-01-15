@@ -98,14 +98,14 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );?>
                                   <div class="carousel-inner">
                                       <div class="carousel-item active">
                                           <?php
-                                          $image = get_field('image_1');
-                                          $image2 = get_field('image_2');
-                                          $image3 = get_field('image_3');
+                                          $image = getAttachmentPost(get_field('image_1'));
+                                          $image2 = getAttachmentPost(get_field('image_2'));
+                                          $image3 = getAttachmentPost(get_field('image_3'));;
                                           if( !empty($image) ): ?>
                                               <div class="carousel-caption" style="text-shadow:2px 1px 1px #000000">
                                                   <h5><?php echo $image['caption']; ?></h5>
                                               </div>
-                                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
                                           <?php endif; ?>
                                       </div>
 

@@ -27,7 +27,7 @@ $mp=new WP_Query(array(
 
                     while ($mp->have_posts()) :
                         $mp->the_post();
-                        $file = get_field('file');
+                        $file = getAttachmentPost(get_field('file'));
 
                         $originalPostId = get_the_ID();
                         $currentPost = getPostOrTranslationIfNeededAndExist($post);

@@ -615,3 +615,18 @@ function getPageLinkBySlug(string $slug): string
     $page = getPageObjectBySlug($slug);
     return $page ? get_page_link(getPageObjectBySlug($slug)) : '#';
 }
+
+
+function getAttachmentPost($postId): ?array
+{
+    $post = get_post($postId);
+    if ($post instanceof WP_Post) {
+        return [
+            'url' => $post->guid,
+            'title' => $post->post_title,
+            'alt' => $post->post_title //alias to be compatible with old code
+        ];
+    }
+
+    return null;
+}

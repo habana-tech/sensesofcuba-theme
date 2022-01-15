@@ -63,7 +63,7 @@
 
                 <?php
 
-                $productPhoto = get_field('product_photo', $postItem->ID);
+                $productPhoto = getAttachmentPost(get_field('product_photo', $postItem->ID));
                 $productPhotoUrl = isset($productPhoto['url']) ? $productPhoto['url'] : "#";
                 $productDescription = strtoupper($postDescription);
 

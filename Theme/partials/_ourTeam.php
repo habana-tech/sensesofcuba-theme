@@ -37,7 +37,7 @@
     <div class="mx-auto col-12 col-md-12 col-lg-3 text-center pb-5 filter <?php foreach (wp_get_post_tags($post->ID) as $tag) {
             echo " ".$tag->name;
         }?>">
-        <img src="<?php echo get_field("image")["url"]?>"  width="150" height="150" class="rounded-circle text-center" alt="<?php echo get_field('name')?>"/>
+        <img src="<?php echo getAttachmentPost(get_field("image"))["url"]?>"  width="150" height="150" class="rounded-circle text-center" alt="<?php echo get_field('name')?>"/>
         <div class="subtitleTeam">
             <p class="boldText"><?php echo the_field('name')?></p>
             <p class="regularText"><?php echo the_field('onchargeof')?></p>

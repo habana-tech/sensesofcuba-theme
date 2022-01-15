@@ -30,45 +30,20 @@ if ($news->have_posts()):?>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <?php
-                                    $image = get_field('image_1');
-                                    $image2 = get_field('image_2');
-                                    $image3 = get_field('image_3');
-                                    if (!empty($image)): ?>
-                                        <div class="carousel-caption" style="text-shadow:2px 1px 1px #000000">
-                                            <h5><?php echo $image['caption']; ?></h5>
-                                        </div>
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                                    <?php endif; ?>
+                                    $image = getAttachmentPost(get_field('image_1'));
+                                        if ($image != null):
+                                            ?>
+                                                <div class="carousel-caption" style="text-shadow:2px 1px 1px #000000">
+                                                    <h5><?php echo $image['title']; ?></h5>
+                                                </div>
+                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
+                                        <?php
+                                        endif;
+                                    ?>
+
                                 </div>
-
-                                <?php if (!empty($image2)): ?>
-                                    <div class="carousel-item">
-                                        <div class="carousel-caption "  style="text-shadow:2px 1px 1px #000000" >
-                                            <h5><?php echo $image2['caption']; ?></h5>
-                                        </div>
-                                        <img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
-                                    </div>
-                                <?php endif; ?>
-                                <?php if (!empty($image3)): ?>
-                                    <div class="carousel-item ">
-                                        <div class="carousel-caption "  style="text-shadow:2px 1px 1px #000000" >
-                                            <h5><?php echo $image3['caption']; ?></h5>
-                                        </div>
-                                        <img src="<?php echo $image3['url']; ?>" alt="<?php echo $image3['alt']; ?> " />
-                                    </div>
-                                <?php endif; ?>
-
                             </div>
-                            <?php if (!empty($image2) || !empty($image3)): ?>
-                                <a class="carousel-control-prev" href="<?php echo "#new_slider".$post->ID; ?>" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="<?php echo "#new_slider".$post->ID; ?>" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            <?php endif; ?>
+
                         </section>
                         <!-- <img class="card-img-top" src='<?php echo get_field("new_images")["url"]?>' /> -->
                     </div>
