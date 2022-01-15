@@ -65,6 +65,9 @@
 
                 $productPhoto = getAttachmentPost(get_field('product_photo', $postItem->ID));
                 $productPhotoUrl = isset($productPhoto['url']) ? $productPhoto['url'] : "#";
+                if(isset($productPhoto['sizes']) && isset($productPhoto['sizes']['medium'])){
+                    $productPhotoUrl = $productPhoto['sizes']['medium'];
+                }
                 $productDescription = strtoupper($postDescription);
 
                 $itemMarkup = "<img src='$productPhotoUrl' style='width: 100%' alt='$productDescription'>

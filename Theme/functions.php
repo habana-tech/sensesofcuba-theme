@@ -617,14 +617,14 @@ function getPageLinkBySlug(string $slug): string
 }
 
 
-function getAttachmentPost($postId): ?array
+function getAttachmentPost($post): ?array
 {
-    $post = get_post($postId);
-    if ($post instanceof WP_Post) {
+    if (is_array($post)) {
         return [
-            'url' => $post->guid,
-            'title' => $post->post_title,
-            'alt' => $post->post_title //alias to be compatible with old code
+            'url' => $post['url'],
+            'title' => $post['title'],
+            'alt' => $post['title'], //alias to be compatible with old code
+            'sizes' => $post['sizes'] ?? null
         ];
     }
 

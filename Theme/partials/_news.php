@@ -32,11 +32,15 @@ if ($news->have_posts()):?>
                                     <?php
                                     $image = getAttachmentPost(get_field('image_1'));
                                         if ($image != null):
+                                            $imageUrl = $image['url'];
+                                            if(isset($image['sizes']) && isset($image['sizes']['medium'])){
+                                                $imageUrl = $image['sizes']['medium'];
+                                            }
                                             ?>
                                                 <div class="carousel-caption" style="text-shadow:2px 1px 1px #000000">
                                                     <h5><?php echo $image['title']; ?></h5>
                                                 </div>
-                                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" />
+                                                <img src="<?php echo $imageUrl; ?>" alt="<?php echo $image['title']; ?>" />
                                         <?php
                                         endif;
                                     ?>
