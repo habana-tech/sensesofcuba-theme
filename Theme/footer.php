@@ -38,16 +38,16 @@ Aquí va el contenido del pie de página
 			<div id="company-info" class="col-md-6" >
 				<div class="pb-3">
 				<span class="text-greyColor-Right d-block" >GENERAL CONTACT</span>
-				<span class="text-light d-block dataContact" style="font-size: 13px">info@sensesofcuba.com</span>
+				<span class="text-light d-block dataContact" style="font-size: 13px">info[at]sensesofcuba.com</span>
 				</div>
 				
 				<div class="pb-3">
 				<span class="text-greyColor-Right d-block">SALES</span>
-				<span class="text-light d-block dataContact" style="font-size: 13px">sales@sensesofcuba.com</span>
+				<span class="text-light d-block dataContact" style="font-size: 13px">sales[at]sensesofcuba.com</span>
 				</div>
 				<div class="pb-3">
 				<span class="text-greyColor-Right d-block">PRODUCT MANAGEMENT</span>
-				<span class="text-light d-block dataContact" style="font-size: 13px">product@sensesofcuba.com</span>
+				<span class="text-light d-block dataContact" style="font-size: 13px">product[at]sensesofcuba.com</span>
 				</div>
 			</div>
 			<div>
