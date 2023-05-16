@@ -64,7 +64,7 @@
 
 <!--TEAM PRESENTATION IMAGE-->
 <section  id="teamPresentation">
-    <img class="" src="<?php echo get_template_directory_uri() . '/assets/images/team.jpg' ?>" style="width:100%;margin-top: -3px" >
+    <img class="" src="<?php echo get_template_directory_uri() . '/assets/images/team.jpg' ?>" style="width:100%;margin-top: -1rem" >
 </section>
 <!--END PRESENTATION IMAGE-->
 
