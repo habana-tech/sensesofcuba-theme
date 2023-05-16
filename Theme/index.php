@@ -62,9 +62,30 @@
     </div>
 <!--END PROFILE SECTION-->
 
+
 <!--TEAM PRESENTATION IMAGE-->
 <section  id="teamPresentation">
-    <img class="" src="<?php echo get_template_directory_uri() . '/assets/images/team.jpg' ?>" style="width:100%;margin-top: -1rem" >
+    <img class="team-image" src="<?php echo get_template_directory_uri() . '/assets/images/team.jpg' ?>">
+    <style>
+        /*    media query for small devices*/
+        @media (max-width: 992px) {
+            .team-image {
+                width: 100%;
+                object-fit: cover;
+                object-position: 0 0;
+                margin-top: 2rem;
+            }
+        }
+    /*    media qquery for desktop*/
+        @media (min-width: 992px) {
+            .team-image {
+                width: 100%;
+                object-fit: cover;
+                object-position: 0 0;
+                margin-top: -1rem;
+            }
+        }
+    </style>
 </section>
 <!--END PRESENTATION IMAGE-->
 

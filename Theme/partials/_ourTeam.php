@@ -1,15 +1,25 @@
 <?php
 
-    $mp=new WP_Query(array(
+
+   $mp=new WP_Query(array(
         'category_name'  => 'OurTeam',
-        'posts_per_page' => 100,
+        'posts_per_page' => -1,
         'meta_key' => 'order',
-        'order_by' => 'meta_value_num',
+        'orderby' => 'meta_value',
         'order'=>'ASC',
         'lang' => 'en'
          ));
 
-        $count =0;?>
+   // Do a ordered list of post by get_field('oder') value
+foreach ($mp->posts as $key => $post) {
+    $mp->posts[$key]->order = get_field('order', $post->ID);
+}
+
+// order the posts by order field
+usort($mp->posts, function ($a, $b) {
+    return $a->order - $b->order;
+});
+?>
         <?php if ($mp->have_posts()):?>
 
 <div style="height:  50px" id="ourTeam"></div>
