@@ -317,8 +317,8 @@ function getTranslatedStringFromDict($string): string
             'es' => 'NOSOTROS',
         ],
         'homeAboutUsText1' => [
-            'en' => 'is your European DMC with a main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups,',
-            'de' => 'ist Ihre europäische Incoming-Agentur in Kuba - mit Hauptsitz im Herzen von Havanna, in der Nähe aller wichtigen Sehenswürdigkeiten und Hotels. Unser Service umfasst individualisierte Programme für FITs & Kleingruppen, Luxusreisen, Special Interest Gruppen,',
+            'en' => 'is your European travel agency with main office in the heart of Havana, close to all important sights and hotels. Focussing on a sophisticated upmarket clientele with tailormade programs for FITs, luxury travellers, special interest groups,',
+            'de' => 'ist Ihre europäische Reiseagentur in Kuba - mit Hauptsitz im Herzen von Havanna, in der Nähe aller wichtigen Sehenswürdigkeiten und Hotels. Unser Service umfasst individualisierte Programme für FITs & Kleingruppen, Luxusreisen, Special Interest Gruppen,',
             'es' => 'es una agencia de viajes con las oficinas principales en el corazón de La Habana, cerca de todos los Hoteles y lugares importantes. Enfocados en  ofrecer programas hechos a la medida para una clientela sofisticada y de alto nivel, que incluye viajes de lujo para individuales y grupos, viajes de interés especial, cruceros,'
         ],
         'homeAboutUsIncentive' => [
